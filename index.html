@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>SerGIS</title>
+    <link rel="stylesheet" href="lib/style.css">
+</head>
+<body>
+
+<div id="wrapper">
+    <header class="noselect">
+        <h1>SerGIS</h1>
+        <div class="toolbox">
+            <div class="title">Toolbox</div>
+            <ul>
+                <li>item1</li>
+                <li>item2</li>
+                <li>item3</li>
+            </ul>
+        </div>
+    </header>
+    <section id="map-container">map here</section>
+    <aside id="sidebar" class="noselect">
+        <h2 id="sidebar-title">Question ##: stuff stuff question stuff stuff stuff question stuff stuff stuff question stuff stuff stuff question stuff stuff stuff question stuff stuff stuff question stuff stuff stuff question stuff stuff stuff question stuff</h2>
+        <div id="sidebar-content" class="content">contecontent content content content content content content content content content content content content content content content content content content content content content nt </div>
+        <footer id="sidebar-footer">
+            <div class="progress"><button id="navigation-previous">Back</button><button id="navigation-next">Skip</button>Question _____ of _____</div>
+            <div class="copyright">Copyright &copy; 2014, SerGIS Project Contributors. All Rights Reserved.</div>
+        </footer>
+    </aside>
+</div>
+
+<!-- External libraries -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBFnOllFhZ0ICRz9ExImi-LmuUOOXoyVM"></script>
+<script type="text/javascript" src="//youtube.com/player_api"></script>
+
+<!-- SerGIS main libraries -->
+<script type="text/javascript">var sergis = {};</script>
+<script type="text/javascript" src="lib/main.js"></script>
+
+<!-- Change the src below to match your frontend -->
+<!-- <script type="text/javascript" src="lib/frontends/arcgis.js"></script> -->
+<script type="text/javascript" src="lib/frontends/googlemaps.js"></script>
+
+<!-- Change the sec below to match your backend -->
+<script type="text/javascript" src="lib/backends/local.js"></script>
+
+</body>
+</html>
