@@ -7,32 +7,58 @@
 </head>
 <body>
 
-<div id="wrapper">
+<div id="main-wrapper" style="display: none;">
     <header class="noselect">
         <h1>SerGIS</h1>
         <div class="toolbox">
             <div class="title">Toolbox</div>
-            <ul>
+            <ul class="buttons">
                 <li>item1</li>
                 <li>item2</li>
                 <li>item3</li>
             </ul>
         </div>
+        <div class="account">Logged in as <span id="main-displayName"></span>.<br><button id="main-logout">Log Out</button></div>
     </header>
-    <section id="map-container">map here</section>
+    <section id="map-container" class="with-sidebar">Loading map...</section>
     <aside id="sidebar" class="noselect">
-        <h2 id="sidebar-title">Question ##: stuff stuff question stuff stuff stuff question stuff stuff stuff question stuff stuff stuff question stuff stuff stuff question stuff stuff stuff question stuff stuff stuff question stuff stuff stuff question stuff</h2>
+        <h2 id="sidebar-title">##: topic info</h2>
         <div id="sidebar-content" class="content">contecontent content content content content content content content content content content content content content content content content content content content content content nt </div>
         <footer id="sidebar-footer">
-            <div class="progress"><button id="navigation-previous">Back</button><button id="navigation-next">Skip</button>Question _____ of _____</div>
+            <div class="progress"><button id="navigation-previous">Back</button><button id="navigation-next">Skip</button>Page _____ of _____</div>
             <div class="copyright">Copyright &copy; 2014, SerGIS Project Contributors. All Rights Reserved.</div>
         </footer>
     </aside>
 </div>
 
+<div id="login-wrapper" style="display: none;">
+    <header class="noselect">
+        <h1>SerGIS</h1>
+    </header>
+    <section>
+        <h2>Log In</h2>
+        <form id="login-form"><fieldset>
+            <p id="login-errmsg" class="errmsg" style="display: none;"></p>
+            <table><tbody>
+                <tr><td>Username:</td><td><input id="login-username"></td></tr>
+                <tr><td>Password:</td><td><input id="login-password" type="password"></td></tr>
+            </tbody></table>
+            <p><input type="submit" value="Log In"></p>
+        </fieldset></form>
+    </section>
+</div>
+
+<div id="loading" class="overall">
+    <table><tbody><tr><td>
+        <p>Loading...</p>
+        <noscript><p>Please enable JavaScript.</p></noscript>
+    </td></tr></tbody></table>
+</div>
+
 <!-- External libraries -->
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBFnOllFhZ0ICRz9ExImi-LmuUOOXoyVM"></script>
 <script type="text/javascript" src="//youtube.com/player_api"></script>
+<script type="text/javascript" src="lib/es6-promise-2.0.0.min.js"></script>
 
 <!-- SerGIS main library (must be first of our stuff) -->
 <script type="text/javascript" src="lib/main.js"></script>
