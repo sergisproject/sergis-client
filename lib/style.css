@@ -37,6 +37,7 @@ ul.buttons li, button, input[type=submit] {
     display: inline;
     position: relative;
     color: white;
+    font-size: 14px;
     
     border: 1px solid white;
     border-radius: 5px;
