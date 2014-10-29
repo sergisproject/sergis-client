@@ -50,8 +50,11 @@
 
 <div id="loading" class="overall">
     <table><tbody><tr><td>
-        <p>Loading...</p>
+        <!--[if lt IE 9]><p>Please upgrade to a newer version of Internet Explorer.</p><![endif]-->
+        <!--[if gte IE 9]>-->
+        <script type="text/javascript">document.write("<p>Loading...</p>");</script>
         <noscript><p>Please enable JavaScript.</p></noscript>
+        <!--<![endif]-->
     </td></tr></tbody></table>
 </div>
 
