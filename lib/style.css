@@ -25,6 +25,7 @@ body {
     border: 1px solid rgb(127, 127, 127);
     border-radius: 9px;
     
+    background-color: rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, 0.9);
 }
 
@@ -72,9 +73,11 @@ ul.buttons li:hover, button:hover, input[type=submit]:hover {
     top: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.86);
-    color: white;
     font-size: 32px;
+    color: white;
+    
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.86);
 }
 
 .overall table {
