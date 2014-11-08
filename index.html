@@ -3,7 +3,10 @@
 <head>
     <meta charset="utf-8">
     <title>SerGIS</title>
-    <link rel="stylesheet" href="lib/style.css">
+    <link rel="stylesheet" type="text/css" href="lib/style.css">
+    <!-- ESRI ArcGIS API stylesheet -->
+    <link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.11/esri/css/esri.css">
+    <style>#myDiv{height:100%;width:100%;}</style>
 </head>
 <body>
 
@@ -57,17 +60,37 @@
     </td></tr></tbody></table>
 </div>
 
-<!-- External libraries -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBFnOllFhZ0ICRz9ExImi-LmuUOOXoyVM"></script>
+
+<!--
+  ************************
+  ** External libraries **
+  ************************
+-->
+
+<!-- ESRI ArcGIS API -->
+<script type="text/javascript" src="http://js.arcgis.com/3.11/"></script>
+
+<!-- Google Maps API -->
+<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBFnOllFhZ0ICRz9ExImi-LmuUOOXoyVM"></script> -->
+
+<!-- YouTube API -->
 <script type="text/javascript" src="https://www.youtube.com/player_api"></script>
+
+<!--
+  **********************
+  ** SerGIS libraries **
+  **********************
+-->
+
+<!-- ES6 Promise polyfill -->
 <script type="text/javascript" src="lib/es6-promise-2.0.0.min.js"></script>
 
 <!-- SerGIS main library (must be first of our stuff) -->
 <script type="text/javascript" src="lib/main.js"></script>
 
 <!-- Change the src below to match your frontend -->
-<!-- <script type="text/javascript" src="lib/frontends/arcgis.js"></script> -->
-<script type="text/javascript" src="lib/frontends/googlemaps.js"></script>
+<script type="text/javascript" src="lib/frontends/arcgis.js"></script>
+<!-- <script type="text/javascript" src="lib/frontends/googlemaps.js"></script> -->
 
 <!-- Change the src below to match your backend -->
 <script type="text/javascript" src="lib/backends/local.js"></script>
