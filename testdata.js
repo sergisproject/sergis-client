@@ -3,14 +3,18 @@
 // we're loading this as an actual JavaScript file, hence the assignment on the line below.
 // For a production environment, get rid of these comments and the assignment below, and set the location of this file in lib/backends/local.js.
 var SERGIS_JSON_DATA = {
-    "jumpingAllowed": true,
+    "jumpingBackAllowed": true,
+    "onJumpBack": "hide",
+    "jumpingForwardAllowed": true,
+    "showActionsInUserOrder": false,
     "promptList": [
         {
             "prompt": {
                 "title": "Introduction",
                 "contents": [
                     {"type": "html", "value": "<b>Hello</b> <i>World!</i>"},
-                    {"type": "text", "value": "Note how the choice positions are randomized for this prompt."}
+                    {"type": "text", "value": "Note how the choice positions are randomized for this prompt. Also, each choice's content is defined in a different way."},
+                    {"type": "html", "value": "Select &quot;Choice <b>NUMBER 1</b>&quot; to see an example of an explanation."}
                 ],
                 "map": {
                     "latitude": 55.6,
@@ -35,7 +39,13 @@ var SERGIS_JSON_DATA = {
                             {"type": "html", "value": "<b><u>Here's another explanation <i>after</i> the Map Action happened!</u></b>"}
                         ]}
                     ],
-                    "pointValue": 1
+                    "pointValue": 5
+                },
+                {
+                    "actions": [
+                        {"name": "buffer"}
+                    ],
+                    "pointValue": 2
                 },
                 {
                     "actions": [
