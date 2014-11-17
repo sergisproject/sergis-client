@@ -9,16 +9,19 @@ var SERGIS_JSON_DATA = {
             "prompt": {
                 "title": "Introduction",
                 "contents": [
-                    {"type": "html", "value": "<b>Hello</b> <i>World!</i>"}
+                    {"type": "html", "value": "<b>Hello</b> <i>World!</i>"},
+                    {"type": "text", "value": "Note how the choice positions are randomized for this prompt."}
                 ],
                 "map": {
                     "latitude": 55.6,
                     "longitude": 13,
                     "zoom": 5
                 },
+                "randomizeChoices": true,
                 "choices": [
                     {"type": "html", "value": "Choice <b>NUMBER 1</b>"},
-                    {"type": "text", "value": "Choice <2>"}
+                    {"type": "text", "value": "Choice <2>"},
+                    {"type": "image", "value": "http://www.text2image.com/user_images/text2image_R45488_20141117_035359.jpg"}
                 ]
             },
             "actionList": [
