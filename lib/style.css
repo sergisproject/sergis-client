@@ -80,12 +80,12 @@ ul.buttons li:hover, button:hover, input[type=submit]:hover {
     background-color: rgba(0, 0, 0, 0.86);
 }
 
-.overall table {
+.overall table, .aside-overall table {
     width: 100%;
     height: 100%;
 }
 
-.overall td {
+.overall td, .aside-overall td {
     vertical-align: middle;
     text-align: center;
 }
@@ -172,6 +172,10 @@ aside {
     border-style: solid none none solid;
     
     background-color: #fafafa;
+}
+
+aside.aside-overall {
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 aside h2, aside footer {

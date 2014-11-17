@@ -27,7 +27,13 @@ var SERGIS_JSON_DATA = {
             "actionList": [
                 {
                     "actions": [
-                        {"name": "buffer", "data": []}
+                        {"name": "explain", "data": [
+                            {"type": "text", "value": "Good choice!"}
+                        ]},
+                        {"name": "buffer", "data": []},
+                        {"name": "explain", "data": [
+                            {"type": "html", "value": "<b><u>Here's another explanation <i>after</i> the Map Action happened!</u></b>"}
+                        ]}
                     ],
                     "pointValue": 1
                 },

@@ -15,9 +15,8 @@
         <div class="toolbox">
             <div class="title">Toolbox</div>
             <ul class="buttons">
-                <li>item1</li>
-                <li>item2</li>
-                <li>item3</li>
+                <li>Layers</li>
+                <li>Measure</li>
             </ul>
         </div>
         <div class="account">Logged in as <span id="main-displayName"></span>.<br><button id="main-logout">Log Out</button></div>
@@ -30,6 +29,12 @@
             <div class="progress"><button id="navigation-previous" style="display: none;">Back</button><button id="navigation-next" style="display: none;">Skip</button>Page <span id="navigation-promptIndex"></span> of <span id="navigation-promptCount"></span></div>
             <div class="copyright">Copyright &copy; 2014, SerGIS Project Contributors. All Rights Reserved.</div>
         </footer>
+    </aside>
+    <aside id="sidebar-overlay" class="aside-overall noselect" style="display: none;">
+        <table><tbody><tr><td>
+            <div id="sidebar-overlay-content" style="display: none;"></div>
+            <p id="sidebar-overlay-loading">Loading...</p>
+        </td></tr></tbody></table>
     </aside>
 </div>
 
