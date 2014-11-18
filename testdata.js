@@ -1,6 +1,11 @@
 // This is a SerGIS JSON Game Data file.
 // However, since we can't load a JSON file unless running on a real web server (impractical for development),
 // we're loading this as an actual JavaScript file, hence the assignment on the line below.
+
+// NOTE: ArcGIS Basemap options are:
+// "streets", "satellite", "hybrid", "topo", "gray", "oceans", "osm", "national-geographic"
+// (NOTE: This comment technically isn't valid JSON)
+
 // For a production environment, get rid of these comments and the assignment below, and set the location of this file in lib/backends/local.js.
 var SERGIS_JSON_DATA = {
     "jumpingBackAllowed": true,
@@ -19,7 +24,12 @@ var SERGIS_JSON_DATA = {
                 "map": {
                     "latitude": 55.6,
                     "longitude": 13,
-                    "zoom": 5
+                    "zoom": 5,
+                    "frontendInfo": {
+                        "arcgis": {
+                            "basemap": "streets"
+                        }
+                    }
                 },
                 "randomizeChoices": true,
                 "choices": [
@@ -65,7 +75,12 @@ var SERGIS_JSON_DATA = {
                 "map": {
                     "latitude": 30,
                     "longitude": -20,
-                    "zoom": 3
+                    "zoom": 3,
+                    "frontendInfo": {
+                        "arcgis": {
+                            "basemap": "national-geographic"
+                        }
+                    }
                 },
                 "choices": [
                     {"type": "text", "value": "I Agree"},
@@ -97,7 +112,12 @@ var SERGIS_JSON_DATA = {
                 "map": {
                     "latitude": 55.6,
                     "longitude": 13,
-                    "zoom": 5
+                    "zoom": 5,
+                    "frontendInfo": {
+                        "arcgis": {
+                            "basemap": "hybrid"
+                        }
+                    }
                 }
             }
         },
@@ -113,7 +133,12 @@ var SERGIS_JSON_DATA = {
                 "map": {
                     "latitude": 0,
                     "longitude": 0,
-                    "zoom": 2
+                    "zoom": 2,
+                    "frontendInfo": {
+                        "arcgis": {
+                            "basemap": "gray"
+                        }
+                    }
                 }
             }
         }
