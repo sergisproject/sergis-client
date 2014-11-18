@@ -34,7 +34,7 @@ var SERGIS_JSON_DATA = {
                         {"name": "explain", "data": [
                             {"type": "text", "value": "Good choice!"}
                         ]},
-                        {"name": "buffer", "data": []},
+                        {"name": "buffer", "data": ["first prompt, first choice"]},
                         {"name": "explain", "data": [
                             {"type": "html", "value": "<b><u>Here's another explanation <i>after</i> the Map Action happened!</u></b>"}
                         ]}
@@ -43,13 +43,13 @@ var SERGIS_JSON_DATA = {
                 },
                 {
                     "actions": [
-                        {"name": "buffer"}
+                        {"name": "buffer", "data": ["first prompt, second choice"]}
                     ],
                     "pointValue": 2
                 },
                 {
                     "actions": [
-                        {"name": "buffer"}
+                        {"name": "buffer", "data": ["first prompt, third choice"]}
                     ],
                     "pointValue": 2
                 }
@@ -60,7 +60,7 @@ var SERGIS_JSON_DATA = {
                 "title": "Legal Crap",
                 "contents": [
                     {"type": "text", "value": "You must agree to this legal crap to continue."},
-                    {"type": "text", "value": "(This is to test \"continue\" (\"I Agree\") and \"logOut\" (\"I Do Not Agree\")"}
+                    {"type": "text", "value": "(This is to test \"continue\" (\"I Agree\") and \"goto[0]\" (\"I Do Not Agree\")"}
                 ],
                 "map": {
                     "latitude": 30,
@@ -80,7 +80,7 @@ var SERGIS_JSON_DATA = {
                 },
                 {
                     "actions": [
-                        {"name": "goto", "data": [1]}
+                        {"name": "goto", "data": [0]}
                     ]
                 }
             ]
