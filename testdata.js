@@ -1,6 +1,8 @@
 // This is a SerGIS JSON Game Data file.
-// However, since we can't load a JSON file unless running on a real web server (impractical for development),
-// we're loading this as an actual JavaScript file, hence the assignment on the line below.
+// See http://sergisproject.github.io/docs/json.html
+
+// Since we can't load a JSON file unless running on a real web server (impractical for development),
+// we're loading this as an actual JavaScript file, hence the assignment to SERGIS_JSON_DATA on the line below.
 
 // NOTE: ArcGIS Basemap options are:
 // "streets", "satellite", "hybrid", "topo", "gray", "oceans", "osm", "national-geographic"
