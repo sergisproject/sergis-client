@@ -109,8 +109,8 @@ Test function to test draw and buffer functionality.
    lat2 (number) - latitude of second end of line (default: 60)
    lng2 (number) - longitude of second end of line (default: 20)
    bufferDistance (number) - distance to buffer (default: 20)
-   bufferUnits (string) - see SerGIS_ArcGIS_Unit in arcgis.js (default: miles)
-   bufferStyle (object) - see SerGIS_ArcGIS_DrawStyle in arcgis.js
+   bufferUnits (string) - see SerGIS_ArcGIS~Unit in arcgis.js (default: miles)
+   bufferStyle (object) - see SerGIS_ArcGIS~DrawStyle in arcgis.js
 */
 function testDrawLineAndBuffer(lat1, lng1, lat2, lng2, bufferDistance, bufferUnits, bufferStyle) {
     sergis.frontend.actions.clearGraphics().then(
@@ -118,8 +118,69 @@ function testDrawLineAndBuffer(lat1, lng1, lat2, lng2, bufferDistance, bufferUni
             sergis.frontend.actions.draw(
                 (lis = "o" + Math.random()),
                 "line",
-                [{latitude: lat1 || 55, longitude: lng1 || 13}, {latitude: lat2 || 60, longitude: lng2 || 20}],
-                {dotStyle: "square", lineStyle: "LongDash", lineWidth: 2}
+                {dotStyle: "square", lineStyle: "LongDash", lineWidth: 2},
+                [{latitude: lat1 || 55, longitude: lng1 || 13}, {latitude: lat2 || 60, longitude: lng2 || 20}]
+            ).then(
+                function () {
+                    sergis.frontend.actions.buffer(
+                        bufferDistance || 20,
+                        bufferUnits || "statute_mile",
+                        lis,
+                        bufferStyle
+                    ).then(
+                        console.log.bind(console, "Buffer Resolved"),
+                        console.error.bind(console, "Buffer Rejected")
+                    ).catch(sergis.error);
+                },
+                console.error.bind(console, "Draw Rejected")
+            ).catch(sergis.error);
+        },
+        console.error.bind(console, "Clear Rejected")
+    ).catch(sergis.error);
+}
+
+
+/*
+Test function to test draw and buffer functionality.
+
+   bufferDistance (number) - distance to buffer (default: 20)
+   bufferUnits (string) - see SerGIS_ArcGIS~Unit in arcgis.js (default: miles)
+   bufferStyle (object) - see SerGIS_ArcGIS~DrawStyle in arcgis.js
+*/
+function testDrawPolygonsAndBuffer(bufferDistance, bufferUnits, bufferStyle) {
+    sergis.frontend.actions.clearGraphics().then(
+        function () {
+            sergis.frontend.actions.draw(
+                (lis = "o" + Math.random()),
+                "polygon",
+                [
+                    {
+                        "latitude": 55.6,
+                        "longitude": 12
+                    },
+                    {
+                        "latitude": 57,
+                        "longitude": 14
+                    },
+                    {
+                        "latitude": 55.6,
+                        "longitude": 15
+                    }
+                ],
+                [
+                    {
+                        "latitude": 55,
+                        "longitude": 12
+                    },
+                    {
+                        "latitude": 54,
+                        "longitude": 14
+                    },
+                    {
+                        "latitude": 56,
+                        "longitude": 14
+                    }
+                ]
             ).then(
                 function () {
                     sergis.frontend.actions.buffer(
