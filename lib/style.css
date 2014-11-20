@@ -212,6 +212,11 @@ aside div.content {
     position: absolute;
     left: 0;
     right: 0;
+    padding: 10px;
+}
+
+aside div.content > div {
+    margin-bottom: 10px;
 }
 
 aside footer > div {
