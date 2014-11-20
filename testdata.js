@@ -55,21 +55,59 @@ var SERGIS_JSON_DATA = {
                 {
                     // Each item in the "actions" array is a SerGIS JSON Action Object
                     "actions": [
+                        // This is an "explain" action
                         {
                             "name": "explain",
                             "data": [
-                                {"type": "text", "value": "Good choice!"}
+                                {"type": "text", "value": "Good choice! Once you click \"Continue\", a polygon will be drawn and a buffer will be placed around it."}
                             ]
                         },
+                        // This is a "draw" action (specific to the "arcgis" frontend)
+                        {
+                            "name": "draw",
+                            "frontend": "arcgis",
+                            "data": [
+                                "firstPromptDrawing",
+                                "polygon",
+                                [
+                                    {
+                                        "latitude": 55.6,
+                                        "longitude": 12
+                                    },
+                                    {
+                                        "latitude": 57,
+                                        "longitude": 14
+                                    },
+                                    {
+                                        "latitude": 55.6,
+                                        "longitude": 15
+                                    }
+                                ]
+                            ]
+                        },
+                        // This is an "explain" action
+                        {
+                            "name": "explain",
+                            "data": [
+                                {"type": "text", "value": "There's a polygon! Next we'll buffer it..."}
+                            ]
+                        },
+                        // This is a "buffer" action (specific to the "arcgis" frontend)
                         {
                             "name": "buffer",
                             "frontend": "arcgis",
-                            "data": ["first prompt, first choice"]
+                            "data": [
+                                50,
+                                "statute_mile",
+                                "firstPromptDrawing"
+                            ]
                         },
+                        // This is an "explain" action
                         {
                             "name": "explain",
                             "data": [
-                                {"type": "html", "value": "<b><u>Here's another explanation <i>after</i> the Map Action happened!</u></b>"}
+                                {"type": "html", "value": "<b><u>Here's another explanation <i>after</i> the Map Action happened!</u></b>"},
+                                {"type": "text", "value": "Notice the polygon & the 50-mile buffer..."}
                             ]
                         }
                     ],
@@ -78,25 +116,13 @@ var SERGIS_JSON_DATA = {
                 // Second choice's actions:
                 {
                     // Each item in the "actions" array is a SerGIS JSON Action Object
-                    "actions": [
-                        {
-                            "name": "buffer",
-                            "frontend": "arcgis",
-                            "data": ["first prompt, second choice"]
-                        }
-                    ],
+                    "actions": [],
                     "pointValue": 2
                 },
                 // Third choice's actions:
                 {
                     // Each item in the "actions" array is a SerGIS JSON Action Object
-                    "actions": [
-                        {
-                            "name": "buffer",
-                            "frontend": "arcgis",
-                            "data": ["first prompt, third choice"]
-                        }
-                    ],
+                    "actions": [],
                     "pointValue": 2
                 }
             ]
