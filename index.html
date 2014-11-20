@@ -100,5 +100,39 @@
 <!-- Change the src below to match your backend -->
 <script type="text/javascript" src="lib/backends/local.js"></script>
 
+<script>
+/*
+Test function to test draw and buffer functionality.
+
+   lat1 (number) - latitude of first end of line (default: 55)
+   lng1 (number) - longitude of first end of line (default: 13)
+   lat2 (number) - latitude of second end of line (default: 60)
+   lng2 (number) - longitude of second end of line (default: 20)
+   bufferDistance (number) - distance to buffer (default: 20)
+   bufferUnits (string) - see SerGIS_ArcGIS_Unit in arcgis.js (default: miles)
+*/
+function testDrawLineAndBuffer(lat1, lng1, lat2, lng2, bufferDistance, bufferUnits) {
+    sergis.frontend.actions.draw(
+        (lis = "o" + Math.random()),
+        "line",
+        [{latitude: lat1 || 55, longitude: lng1 || 13}, {latitude: lat2 || 60, longitude: lng2 || 20}],
+        {dotStyle: "square", lineStyle: "LongDash", lineWidth: 2}
+    ).then(
+        function () {
+            sergis.frontend.actions.buffer(
+                bufferDistance || 20,
+                bufferUnits || "statute_mile",
+                lis
+            ).then(
+                console.log.bind(console, "Buffer Resolved"),
+                console.error.bind(console, "Buffer Rejected")
+            ).catch(sergis.error);
+        },
+        console.log.bind(console, "Draw Rejected")
+    ).catch(sergis.error);
+    return lis;
+}
+</script>
+
 </body>
 </html>
