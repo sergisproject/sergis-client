@@ -129,6 +129,8 @@ header h1 {
     height: -moz-calc(100% - 30px);
     height: calc(100% - 30px);
     
+    box-shadow: 1px 0 5px white;
+    
     background-color: #434b55;
     background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6c7989), color-stop(100%, #434b55));
     background-image: -webkit-linear-gradient(#6c7989, #434b55);
@@ -152,6 +154,8 @@ header div.account {
     padding: 15px;
     line-height: 150%;
     text-align: right;
+    
+    box-shadow: -1px 0 5px white;
     
     background-color: #434b55;
     background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6c7989), color-stop(100%, #434b55));
