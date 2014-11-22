@@ -135,7 +135,7 @@ var SERGIS_JSON_DATA = {
                 // Each item in the "contents" array is a SerGIS JSON Content Object
                 "contents": [
                     {"type": "text", "value": "You must agree to this legal crap to continue."},
-                    {"type": "text", "value": "(This is to test \"continue\" (\"I Agree\") and \"goto[0]\" (\"I Do Not Agree\")"}
+                    {"type": "text", "value": "(This is to test if no actions are provided (\"I Agree\") and \"goto[0]\" (\"I Do Not Agree\")"}
                 ],
                 // "map" is a SerGIS JSON Map Object
                 "map": {
@@ -158,10 +158,8 @@ var SERGIS_JSON_DATA = {
             "actionList": [
                 // First choice's actions:
                 {
-                    // Each item in the "actions" array is a SerGIS JSON Action Object
-                    "actions": [
-                        {"name": "continue"}
-                    ]
+                    // No actions, so doesn't do anything before going on to the next prompt
+                    "actions": []
                 },
                 // Second choice's actions:
                 {
