@@ -21,204 +21,117 @@ var SERGIS_JSON_DATA = {
         {
             // "prompt" is a SerGIS JSON Prompt Object
             "prompt": {
-                "title": "Introduction",
+                "title": "Malmö",
                 // Each item in the "contents" array is a SerGIS JSON Content Object
                 "contents": [
-                    {"type": "html", "value": "<b>Hello</b> <i>World!</i>"},
-                    {"type": "text", "value": "Note how the choice positions are randomized for this prompt. Also, each choice's content is defined in a different way."},
-                    {"type": "html", "value": "Select &quot;Choice <b>NUMBER 1</b>&quot; to see an example of an explanation."}
+                    {"type": "text", "value": "Which district should be given priority in an evacuation?"}
                 ],
                 // "map" is a SerGIS JSON Map Object
                 "map": {
                     "latitude": 55.6,
                     "longitude": 13,
-                    "zoom": 5,
+                    "zoom": 6,
                     "frontendInfo": {
                         "arcgis": {
-                            "basemap": "streets"
+                            "basemap": "streets",
+                            "layers": [
+                                {
+                                    "name": "Overcrowding",
+                                    "urls": [
+                                        "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/Malmo_test/MapServer"
+                                        // MALM_Trygghet_levnadsf_tr(a with a circle on top)ngbodd_12_SWE
+                                    ]
+                                },
+                                {
+                                    "name": "Illness",
+                                    "urls": [
+                                        "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/Malmo_test/MapServer"
+                                        // MALM_Trygghet_levnadsf_oh(a with 2 dots on top)lsa_02_11_SWE
+                                    ]
+                                },
+                                {
+                                    "name": "Injury",
+                                    "urls": [
+                                        "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/Malmo_test/MapServer"
+                                        // MALM_Trygghet_levnadsf_kr(a with 2 dots on top)nkning_12_SWE
+                                    ]
+                                },
+                            ]
                         }
                     }
                 },
                 "randomizeChoices": true,
                 // Each item in the "choices" array is a SerGIS JSON Content Object
                 "choices": [
-                    // First choice:
-                    {"type": "html", "value": "Choice <b>NUMBER 1</b>"},
-                    // Second choice:
-                    {"type": "text", "value": "Choice <2>"},
-                    // Third choice:
-                    {"type": "image", "value": "http://www.text2image.com/user_images/text2image_R45488_20141117_035359.jpg"}
+                    {"type": "text", "value": "Väster"},
+                    {"type": "text", "value": "Innerstaden"},
+                    {"type": "text", "value": "Norr"},
+                    {"type": "text", "value": "Söder"},
+                    {"type": "text", "value": "Öster"}
                 ]
             },
             "actionList": [
-                // First choice's actions:
                 {
                     // Each item in the "actions" array is a SerGIS JSON Action Object
                     "actions": [
-                        // This is an "explain" action
                         {
                             "name": "explain",
                             "data": [
-                                {"type": "text", "value": "Good choice! Once you click \"Continue\", a polygon will be drawn and a buffer will be placed around it."}
-                            ]
-                        },
-                        // This is a "draw" action (specific to the "arcgis" frontend)
-                        {
-                            "name": "draw",
-                            "frontend": "arcgis",
-                            "data": [
-                                "firstPromptDrawing",
-                                "polygon",
-                                [
-                                    {
-                                        "latitude": 55.6,
-                                        "longitude": 12
-                                    },
-                                    {
-                                        "latitude": 57,
-                                        "longitude": 14
-                                    },
-                                    {
-                                        "latitude": 55.6,
-                                        "longitude": 15
-                                    }
-                                ]
-                            ]
-                        },
-                        // This is an "explain" action
-                        {
-                            "name": "explain",
-                            "data": [
-                                {"type": "text", "value": "There's a polygon! Next we'll buffer it..."}
-                            ]
-                        },
-                        // This is a "buffer" action (specific to the "arcgis" frontend)
-                        {
-                            "name": "buffer",
-                            "frontend": "arcgis",
-                            "data": [
-                                50,
-                                "statute_mile",
-                                "firstPromptDrawing"
-                            ]
-                        },
-                        // This is an "explain" action
-                        {
-                            "name": "explain",
-                            "data": [
-                                {"type": "html", "value": "<b><u>Here's another explanation <i>after</i> the Map Action happened!</u></b>"},
-                                {"type": "text", "value": "Notice the polygon & the 50-mile buffer..."}
+                                {"type": "text", "value": "Good choice!"}
                             ]
                         }
                     ],
-                    "pointValue": 5
-                },
-                // Second choice's actions:
-                {
-                    // Each item in the "actions" array is a SerGIS JSON Action Object
-                    "actions": [],
                     "pointValue": 2
                 },
-                // Third choice's actions:
-                {
-                    // Each item in the "actions" array is a SerGIS JSON Action Object
-                    "actions": [],
-                    "pointValue": 2
-                }
-            ]
-        },
-        // Second prompt:
-        {
-            // "prompt" is a SerGIS JSON Prompt Object
-            "prompt": {
-                "title": "Legal Crap",
-                // Each item in the "contents" array is a SerGIS JSON Content Object
-                "contents": [
-                    {"type": "text", "value": "You must agree to this legal crap to continue."},
-                    {"type": "text", "value": "(This is to test if no actions are provided (\"I Agree\") and \"goto[0]\" (\"I Do Not Agree\")"}
-                ],
-                // "map" is a SerGIS JSON Map Object
-                "map": {
-                    "latitude": 30,
-                    "longitude": -20,
-                    "zoom": 3,
-                    "frontendInfo": {
-                        "arcgis": {
-                            "basemap": "national-geographic"
-                        }
-                    }
-                },
-                "choices": [
-                    // First choice:
-                    {"type": "text", "value": "I Agree"},
-                    // Second choice:
-                    {"type": "text", "value": "I Disagree"}
-                ]
-            },
-            "actionList": [
-                // First choice's actions:
-                {
-                    // No actions, so doesn't do anything before going on to the next prompt
-                    "actions": []
-                },
-                // Second choice's actions:
                 {
                     // Each item in the "actions" array is a SerGIS JSON Action Object
                     "actions": [
-                        {"name": "goto", "data": [0]}
-                    ]
+                        {
+                            "name": "explain",
+                            "data": [
+                                {"type": "text", "value": "Good choice!"}
+                            ]
+                        }
+                    ],
+                    "pointValue": 2
+                },
+                {
+                    // Each item in the "actions" array is a SerGIS JSON Action Object
+                    "actions": [
+                        {
+                            "name": "explain",
+                            "data": [
+                                {"type": "text", "value": "Good choice!"}
+                            ]
+                        }
+                    ],
+                    "pointValue": 2
+                },
+                {
+                    // Each item in the "actions" array is a SerGIS JSON Action Object
+                    "actions": [
+                        {
+                            "name": "explain",
+                            "data": [
+                                {"type": "text", "value": "Good choice!"}
+                            ]
+                        }
+                    ],
+                    "pointValue": 2
+                },
+                {
+                    // Each item in the "actions" array is a SerGIS JSON Action Object
+                    "actions": [
+                        {
+                            "name": "explain",
+                            "data": [
+                                {"type": "text", "value": "Good choice!"}
+                            ]
+                        }
+                    ],
+                    "pointValue": 2
                 }
             ]
-        },
-        // Third prompt:
-        {
-            // "prompt" is a SerGIS JSON Prompt Object
-            "prompt": {
-                "title": "Test Questions",
-                // Each item in the "contents" array is a SerGIS JSON Content Object
-                "contents": [
-                    {"type": "text", "value": "<b>Hello</b> <i>World!</i> (again, menos HTML parsing)"},
-                    {"type": "image", "value": "http://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/70px-Wikipedia-logo-v2.svg.png"},
-                    {"type": "youtube", "value": "dQw4w9WgXcQ"},
-                    {"type": "text", "value": "Note the \"Continue\" button (since we didn't provide any choices and this isn't the last question)"}
-                ],
-                // "map" is a SerGIS JSON Map Object
-                "map": {
-                    "latitude": 55.6,
-                    "longitude": 13,
-                    "zoom": 5,
-                    "frontendInfo": {
-                        "arcgis": {
-                            "basemap": "hybrid"
-                        }
-                    }
-                }
-            }
-        },
-        // Fourth prompt:
-        {
-            // "prompt" is a SerGIS JSON Prompt Object
-            "prompt": {
-                "title": "Test Questions",
-                // Each item in the "contents" array is a SerGIS JSON Content Object
-                "contents": [
-                    {"type": "text", "value": "<b>Hello</b> <i>World!</i> (again, menos HTML parsing)"},
-                    {"type": "image", "value": "http://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/70px-Wikipedia-logo-v2.svg.png"},
-                    {"type": "youtube", "value": "dQw4w9WgXcQ"},
-                    {"type": "text", "value": "Note the lack of any choice buttons (since we didn't provide any choices and this IS the last question)"}
-                ],
-                // "map" is a SerGIS JSON Map Object
-                "map": {
-                    "latitude": 0,
-                    "longitude": 0,
-                    "zoom": 2,
-                    "frontendInfo": {
-                        "arcgis": {
-                            "basemap": "gray"
-                        }
-                    }
-                }
-            }
         }
     ]
 }
