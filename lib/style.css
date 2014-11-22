@@ -254,6 +254,27 @@ aside footer div.copyright {
     border-top: 1px solid white;
 }
 
+/* POPUP STYLES (top-right corner of the map thingie) */
+
+div.popup {
+    position: absolute;
+    top: 70px;
+    right: 450px;
+    margin: 10px;
+    padding: 10px;
+    max-width: 15%;
+    
+    border: 2px solid #6c7989;
+    border-radius: 5px;
+    
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+div.popup h2 {
+    text-align: center;
+    margin: 3px;
+}
+
 /* FIELDSET STYLES (login form) */
 
 fieldset {

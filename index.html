@@ -18,7 +18,9 @@
         </div>
         <div class="account">Logged in as <span id="main-displayName"></span>.<br><button id="main-logout">Log Out</button></div>
     </header>
+    
     <section id="map-container" class="with-sidebar">Loading map...</section>
+    
     <aside id="sidebar" class="noselect">
         <h2 id="sidebar-title"><span id="sidebar-title-number" style="float: right;">#</span><span id="sidebar-title-text">title</span></h2>
         <div id="sidebar-content" class="content">Loading content...</div>
@@ -27,12 +29,15 @@
             <div class="copyright">Copyright &copy; 2014, SerGIS Project Contributors. All Rights Reserved.</div>
         </footer>
     </aside>
+    
     <aside id="sidebar-overlay" class="aside-overall noselect" style="display: none;">
         <table><tbody><tr><td>
             <div id="sidebar-overlay-content" style="display: none;"></div>
             <p id="sidebar-overlay-loading">Loading...</p>
         </td></tr></tbody></table>
     </aside>
+    
+    <div id="map-popup" class="popup" style="display: none;"></div>
 </div>
 
 <div id="login-wrapper" style="display: none;">
