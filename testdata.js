@@ -30,7 +30,7 @@ var SERGIS_JSON_DATA = {
                 "map": {
                     "latitude": 55.6,
                     "longitude": 13,
-                    "zoom": 6,
+                    "zoom": 10,
                     "frontendInfo": {
                         "arcgis": {
                             "basemap": "streets",
