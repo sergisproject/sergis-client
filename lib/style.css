@@ -243,6 +243,18 @@ aside div.content > div {
     margin-bottom: 10px;
 }
 
+aside div.content table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+aside div.content th, aside div.content td {
+    text-align: left;
+    padding: 5px 10px;
+    border: 1px solid #aaa;
+    vertical-align: top;
+}
+
 aside footer > div {
     text-align: center;
     clear: both;
@@ -256,11 +268,15 @@ aside footer > div {
     float: right;
 }
 
+aside footer div.progress {
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    
+    border-bottom: 1px solid white;
+}
+
 aside footer div.copyright {
     font-size: 13px;
-    margin-top: 10px;
-    
-    border-top: 1px solid white;
 }
 
 /* Used for the resizer between the sidebar and the map content */
