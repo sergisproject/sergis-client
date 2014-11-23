@@ -40,7 +40,7 @@ var SERGIS_JSON_DATA = {
                                     "opacity": 1,
                                     "urls": [
                                         "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/Malmo_test/MapServer"
-                                        // MALM_Trygghet_levnadsf_tr(a with a circle on top)ngbodd_12_SWE
+                                        // MALM_Trygghet_levnadsf_trångbodd_12_SWE
                                     ]
                                 },
                                 {
@@ -48,7 +48,7 @@ var SERGIS_JSON_DATA = {
                                     "opacity": 0.85,
                                     "urls": [
                                         "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/Malmo_test/MapServer"
-                                        // MALM_Trygghet_levnadsf_oh(a with 2 dots on top)lsa_02_11_SWE
+                                        // MALM_Trygghet_levnadsf_ohälsa_02_11_SWE
                                     ]
                                 },
                                 {
@@ -56,7 +56,7 @@ var SERGIS_JSON_DATA = {
                                     "opacity": 0.5,
                                     "urls": [
                                         "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/Malmo_test/MapServer"
-                                        // MALM_Trygghet_levnadsf_kr(a with 2 dots on top)nkning_12_SWE
+                                        // MALM_Trygghet_levnadsf_kränkning_12_SWE
                                     ]
                                 },
                             ]
