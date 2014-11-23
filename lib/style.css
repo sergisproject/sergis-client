@@ -195,8 +195,7 @@ aside {
     right: 0;
     width: 450px;
     
-    border: 2px solid #6c7989;
-    border-style: solid none none solid;
+    border-top: 2px solid #6c7989;
     
     background-color: #fafafa;
 }
@@ -252,6 +251,17 @@ aside footer div.copyright {
     margin-top: 10px;
     
     border-top: 1px solid white;
+}
+
+div.resizer {
+    position: absolute;
+    width: 5px;
+    top: 70px;
+    bottom: 0;
+    cursor: col-resize;
+    right: 450px;
+    
+    background-color: #6c7989;
 }
 
 /* POPUP STYLES (top-right corner of the map thingie) */
