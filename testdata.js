@@ -45,7 +45,7 @@ var SERGIS_JSON_DATA = {
                                 },
                                 {
                                     "name": "Illness",
-                                    "opacity": 0.85,
+                                    "opacity": 0.8,
                                     "urls": [
                                         "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/Malmo_test/MapServer"
                                         // MALM_Trygghet_levnadsf_ohälsa_02_11_SWE
