@@ -29,6 +29,11 @@ body {
 }
 
 /* BUTTONS */
+/* Can be used in 3 ways:
+    <ul class="buttons">...</ul>
+    <button>...</button>
+    <input type="submit">
+*/
 
 ul.buttons {
     display: inline;
@@ -80,7 +85,7 @@ ul.buttons li:active, button:active, input[type=submit]:active {
     box-shadow: 0 0 2px white, 0 0 2px rgba(0, 0, 0, 0.7);
 }
 
-/* LOADING SIGN */
+/* LOADING SIGN(S) */
 
 .overall {
     position: fixed;
@@ -167,6 +172,7 @@ header div.account {
 }
 
 /* SECTION STYLES */
+/* <section> is used for the map content */
 
 section {
     display: block;
@@ -175,6 +181,9 @@ section {
     bottom: 0;
     left: 0;
     right: 0;
+    
+    background-color: #434b55;
+    color: white;
 }
 
 section.with-sidebar {
@@ -186,6 +195,7 @@ section h2 {
 }
 
 /* ASIDE STYLES */
+/* <aside> is used for the sidebar */
 
 aside {
     display: block;
@@ -253,6 +263,7 @@ aside footer div.copyright {
     border-top: 1px solid white;
 }
 
+/* Used for the resizer between the sidebar and the map content */
 div.resizer {
     position: absolute;
     width: 5px;
@@ -264,7 +275,8 @@ div.resizer {
     background-color: #6c7989;
 }
 
-/* POPUP STYLES (top-right corner of the map thingie) */
+/* POPUP STYLES */
+/* Used for the boxes in the top-right corner of the map */
 
 div.popup {
     position: absolute;
