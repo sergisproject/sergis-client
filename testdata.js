@@ -282,7 +282,7 @@ var SERGIS_JSON_DATA = {
                 "contents": [
                     {"type": "text", "value": "You must agree to this legal crap to continue."},
                     {"type": "html", "value": "This is just to show what happens if...<br>a) no actions are provided (&quot;I Agree&quot;), and<br>b) <code>goto[0]</code> (&quot;I Disagree&quot;)."},
-                    {"type": "text", "value": "Clicking \"I Disagree\" will take you back to the first prompt, but note how the response to the second prompt (i.e. the buffer) is now gone. This is due to the \"onJumpBack\": \"hide\" setting in the JSON file. (\"jumpingBackAllowed\", \"onJumpBack\", \"jumpingForwardAllowed\", and \"showActionsInUserOrder\" are settings in the JSON file that give you fine-grained control over how the user is able to jump between questions and what happens when he or she does.)", "style": "font-size: 70%"}
+                    {"type": "text", "value": "Clicking \"I Disagree\" will take you back to the first prompt, but note how the response to the second prompt (i.e. the buffer) is now gone. This is due to the \"onJumpBack\": \"hide\" setting in the JSON file. (\"jumpingBackAllowed\", \"onJumpBack\", \"jumpingForwardAllowed\", and \"showActionsInUserOrder\" are settings in the JSON file that give you fine-grained control over how users are able to jump between questions and what happens when they do.)", "style": "font-size: 85%"}
                 ],
                 // "map" is a SerGIS JSON Map Object
                 "map": {
