@@ -167,7 +167,9 @@ var SERGIS_JSON_DATA = {
                 // First choice's actions:
                 {
                     // No actions, so doesn't do anything before going on to the next prompt
-                    "actions": []
+                    // (You could provide an empty array, but not providing anything works just as well)
+                    // (Just make sure that there's an empty object here to hold the place in actionList)
+                    //"actions": []
                 },
                 // Second choice's actions:
                 {
@@ -185,10 +187,11 @@ var SERGIS_JSON_DATA = {
                 "title": "Test Questions",
                 // Each item in the "contents" array is a SerGIS JSON Content Object
                 "contents": [
-                    {"type": "text", "value": "<b>Hello</b> <i>World!</i> (again, menos HTML parsing)"},
+                    {"type": "text", "value": "<b>Hello</b> <i>World!</i> (menos HTML parsing)"},
+                    {"type": "html", "value": "<b>Hello</b> <i>World!</i> (con HTML parsing)"},
                     {"type": "image", "value": "http://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/70px-Wikipedia-logo-v2.svg.png"},
                     {"type": "youtube", "value": "dQw4w9WgXcQ"},
-                    {"type": "text", "value": "Note the \"Continue\" button (since we didn't provide any choices and this isn't the last question)"}
+                    {"type": "text", "value": "Note the \"Continue\" button (since we didn't provide any choices)"}
                 ],
                 // "map" is a SerGIS JSON Map Object
                 "map": {
@@ -198,31 +201,6 @@ var SERGIS_JSON_DATA = {
                     "frontendInfo": {
                         "arcgis": {
                             "basemap": "hybrid"
-                        }
-                    }
-                }
-            }
-        },
-        // Fourth prompt:
-        {
-            // "prompt" is a SerGIS JSON Prompt Object
-            "prompt": {
-                "title": "Test Questions",
-                // Each item in the "contents" array is a SerGIS JSON Content Object
-                "contents": [
-                    {"type": "text", "value": "<b>Hello</b> <i>World!</i> (again, menos HTML parsing)"},
-                    {"type": "image", "value": "http://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/70px-Wikipedia-logo-v2.svg.png"},
-                    {"type": "youtube", "value": "dQw4w9WgXcQ"},
-                    {"type": "text", "value": "Note the lack of any choice buttons (since we didn't provide any choices and this IS the last question)"}
-                ],
-                // "map" is a SerGIS JSON Map Object
-                "map": {
-                    "latitude": 0,
-                    "longitude": 0,
-                    "zoom": 2,
-                    "frontendInfo": {
-                        "arcgis": {
-                            "basemap": "gray"
                         }
                     }
                 }
