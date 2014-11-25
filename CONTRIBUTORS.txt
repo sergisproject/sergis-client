@@ -1,5 +1,5 @@
-SerGIS CONTRIBUTORS
-===================
+SerGIS PROJECT CONTRIBUTORS
+===========================
 
 Jeannette Forbes
 Jake Hartz
