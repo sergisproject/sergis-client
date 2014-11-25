@@ -194,6 +194,12 @@ section h2 {
     text-align: center;
 }
 
+/* For compatibility with ArcGIS API */
+#map-container-ARCGIS_API {
+    background-color: white;
+    color: black;
+}
+
 /* ASIDE STYLES */
 /* <aside> is used for the sidebar */
 
