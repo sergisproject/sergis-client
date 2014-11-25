@@ -48,9 +48,9 @@ var SERGIS_JSON_DATA = {
                             "layers": [
                                 {
                                     "name": "Overcrowding",
-                                    "opacity": 1,
+                                    "opacity": 0.8,
                                     "urls": [
-                                        "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/Malmo_test/MapServer"
+                                        "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/MALM_Trygghet_levnadsf_trangbodd_12_SWE/MapServer"
                                         // MALM_Trygghet_levnadsf_trångbodd_12_SWE
                                     ]
                                 },

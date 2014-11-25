@@ -181,13 +181,13 @@ section {
     bottom: 0;
     left: 0;
     right: 0;
-    
-    background-color: #434b55;
-    color: white;
 }
 
 section.with-sidebar {
     right: 450px;
+    
+    background-color: #434b55;
+    color: white;
 }
 
 section h2 {
