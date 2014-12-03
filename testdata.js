@@ -37,9 +37,9 @@ var SERGIS_JSON_DATA = {
                 ],
                 // "map" is a SerGIS JSON Map Object
                 "map": {
-                    "latitude": 55.6,
+                    "latitude": 55.58,
                     "longitude": 13,
-                    "zoom": 10,
+                    "zoom": 11,
                     "frontendInfo": {
                         "arcgis": {
                             "basemap": "streets",
@@ -47,29 +47,34 @@ var SERGIS_JSON_DATA = {
                             // Providing multiple layers will allow the user to choose between them, with none being visible by default.
                             "layers": [
                                 {
-                                    "name": "Overcrowding",
-                                    "opacity": 0.9,
+                                    "name": "Accidents (by jenks)",
+                                    "opacity": 0.83,
                                     "urls": [
-                                        "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/MALM_Trygghet_levnadsf_trangbodd_12_SWE/MapServer"
-                                        // MALM_Trygghet_levnadsf_trångbodd_12_SWE
+                                        //"http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/Malmo_test/MapServer"
+                                        "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/accidents_jenks/MapServer"
                                     ]
                                 },
                                 {
-                                    "name": "Illness",
-                                    "opacity": 0.9,
+                                    "name": "Illness (by jenks)",
+                                    "opacity": 0.83,
                                     "urls": [
-                                        "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/MALM_Trygghet_levnadsf_ohalsa_02_11_SWE/MapServer"
-                                        // MALM_Trygghet_levnadsf_ohälsa_02_11_SWE
+                                        "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/illness_jenks/MapServer"
                                     ]
                                 },
                                 {
-                                    "name": "Injury",
-                                    "opacity": 0.8,
+                                    "name": "Accidents (by equal interval)",
+                                    "opacity": 0.83,
                                     "urls": [
-                                        "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/Malmo_test/MapServer"
-                                        // MALM_Trygghet_levnadsf_kränkning_12_SWE
+                                        "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/accidents_equalinterval/MapServer"
                                     ]
                                 },
+                                {
+                                    "name": "Illness (by geometric interval)",
+                                    "opacity": 0.83,
+                                    "urls": [
+                                        "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/illness_geometricinterval/MapServer"
+                                    ]
+                                }
                             ]
                         }
                     }
