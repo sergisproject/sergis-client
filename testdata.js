@@ -26,16 +26,57 @@ var SERGIS_JSON_DATA = {
     "showActionsInUserOrder": false,
     
     "promptList": [
-        // First prompt:
         {
-            // "prompt" is a SerGIS JSON Prompt Object
+            "prompt": {
+                "title": "Introduction",
+                "contents": [
+                    {"type": "html", "value": "<h3>Welcome to SerGIS!</h3>"},
+                    {"type": "text", "value": "SerGIS is a system for \"serious\" GIS games. This example relates to making decisions regarding flooding in Malmö, Sweden."},
+                    {"type": "text", "value": "In this example, you can skip around between questions or go back to questions that you have previously answered. However, like the rest of the game, all these properties are configurable."},
+                    {"type": "text", "value": "Press \"Continue\" to begin the game."}
+                ],
+                "map": {
+                    "latitude": 47,
+                    "longitude": 13,
+                    "zoom": 4,
+                    "frontendInfo": {
+                        "arcgis": {
+                            "basemap": "gray"
+                        }
+                    }
+                }
+            }
+        },
+        
+        {
+            "prompt": {
+                "title": "Introduction",
+                "contents": [
+                    {"type": "text", "value": "You have traveled to Malmö, Sweden to help out after a recent flooding in August. Malmö's public safety responses to floods are notorously slow; the nearby city of Copenagen flooded at the same time and received much quicker warning."},
+                    {"type": "image", "value": "http://static.akipress.org/127/.storage/ennews/images/World/a30761d752243f8b9685371572c94350.jpg"},
+                    {"type": "text", "value": "Creating a plan of action for the next flood will speed up response, reduce danger, and minimize property damage."}
+                ],
+                "map": {
+                    "latitude": 55.58,
+                    "longitude": 13,
+                    "zoom": 6,
+                    "frontendInfo": {
+                        "arcgis": {
+                            "basemap": "hybrid"
+                        }
+                    }
+                }
+            }
+        },
+        
+        {
             "prompt": {
                 "title": "Malmö",
-                // Each item in the "contents" array is a SerGIS JSON Content Object
                 "contents": [
-                    {"type": "text", "value": "Which district should be given priority in an evacuation?"}
+                    {"type": "text", "value": "Which district should be used as a safe area?"},
+                    {"type": "text", "value": "Select different map layers to the left to view them on the map. Use this to aid you in choosing your answer."},
+                    {"type": "text", "value": "The districts are labeled by number. These numbers do not correspond to any ranking."}
                 ],
-                // "map" is a SerGIS JSON Map Object
                 "map": {
                     "latitude": 55.58,
                     "longitude": 13,
@@ -43,14 +84,99 @@ var SERGIS_JSON_DATA = {
                     "frontendInfo": {
                         "arcgis": {
                             "basemap": "streets",
-                            // Providing one layer will show only that layer.
-                            // Providing multiple layers will allow the user to choose between them, with none being visible by default.
                             "layers": [
                                 {
                                     "name": "Accidents (by jenks)",
                                     "opacity": 0.83,
                                     "urls": [
-                                        //"http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/Malmo_test/MapServer"
+                                        "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/accidents_jenks/MapServer"
+                                    ]
+                                },
+                                {
+                                    "name": "Accidents (by equal interval)",
+                                    "opacity": 0.83,
+                                    "urls": [
+                                        "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/accidents_equalinterval/MapServer"
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                },
+                "choices": [
+                    {"type": "text", "value": "District 1"},
+                    {"type": "text", "value": "District 3"},
+                    {"type": "text", "value": "District 6"},
+                    {"type": "text", "value": "District 10"}
+                ]
+            },
+            "actionList": [
+                {
+                    "actions": [
+                        {
+                            "name": "explain",
+                            "data": [
+                                {"type": "text", "value": "This is an adequate choice because of the ability to use the bridge to Copenhagen for evacuation, but it is too close to the shoreline to be the best option in the case of flooding."},
+                                {"type": "text", "value": "A better choice would be District 3, which is further from the shoreline and provides many evacuation routes into the rest of Sweden."}
+                            ]
+                        }
+                    ],
+                    "pointValue": 2
+                },
+                {
+                    "actions": [
+                        {
+                            "name": "explain",
+                            "data": [
+                                {"type": "text", "value": "This is the best choice because it is the furthest from the shoreline and provides many evacuation routes into the rest of Sweden."}
+                            ]
+                        }
+                    ],
+                    "pointValue": 3
+                },
+                {
+                    "actions": [
+                        {
+                            "name": "explain",
+                            "data": [
+                                {"type": "text", "value": "This district cuts off evacuation routes and is too close to the shoreline. It is a bad choice."}
+                            ]
+                        }
+                    ],
+                    "pointValue": 0
+                },
+                {
+                    "actions": [
+                        {
+                            "name": "explain",
+                            "data": [
+                                {"type": "text", "value": "This district cuts off evacuation routes, has a high accident rate, and is part of the inner city, so it is already crowded. Overall, it is not a good choice."}
+                            ]
+                        }
+                    ],
+                    "pointValue": 0
+                }
+            ]
+        },
+        
+        {
+            "prompt": {
+                "title": "Malmö",
+                "contents": [
+                    {"type": "text", "value": "Which district should be given priority in an evacuation?"}
+                ],
+                "map": {
+                    "latitude": 55.58,
+                    "longitude": 13,
+                    "zoom": 11,
+                    "frontendInfo": {
+                        "arcgis": {
+                            "basemap": "streets",
+                            "layers": [
+                                {
+                                    "name": "Accidents (by jenks)",
+                                    "opacity": 0.83,
+                                    "urls": [
                                         "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/accidents_jenks/MapServer"
                                     ]
                                 },
@@ -79,55 +205,55 @@ var SERGIS_JSON_DATA = {
                         }
                     }
                 },
-                "randomizeChoices": true,
-                // Each item in the "choices" array is a SerGIS JSON Content Object
+                "randomizeChoices": false,
                 "choices": [
-                    {"type": "text", "value": "Väster"},
-                    {"type": "text", "value": "Innerstaden"},
-                    {"type": "text", "value": "Norr"},
-                    {"type": "text", "value": "Söder"},
-                    {"type": "text", "value": "Öster"}
+                    {"type": "text", "value": "District 2"},
+                    {"type": "text", "value": "District 5"},
+                    {"type": "text", "value": "District 7"},
+                    {"type": "text", "value": "District 8"},
+                    {"type": "text", "value": "District 9"},
+                    {"type": "text", "value": "District 10"}
                 ]
             },
             "actionList": [
                 {
-                    // Each item in the "actions" array is a SerGIS JSON Action Object
+                    // district 2
                     "actions": [
                         {
                             "name": "explain",
                             "data": [
-                                {"type": "text", "value": "Good choice!"}
+                                {"type": "text", "value": "Decent choice, but not the best."}
                             ]
                         }
                     ],
-                    "pointValue": 2
+                    "pointValue": 1
                 },
                 {
-                    // Each item in the "actions" array is a SerGIS JSON Action Object
+                    // district 5
                     "actions": [
                         {
                             "name": "explain",
                             "data": [
-                                {"type": "text", "value": "Good choice!"}
+                                {"type": "text", "value": "Bad choice."}
                             ]
                         }
                     ],
-                    "pointValue": 2
+                    "pointValue": 0
                 },
                 {
-                    // Each item in the "actions" array is a SerGIS JSON Action Object
+                    // district 7
                     "actions": [
                         {
                             "name": "explain",
                             "data": [
-                                {"type": "text", "value": "Good choice!"}
+                                {"type": "text", "value": "Bad choice."}
                             ]
                         }
                     ],
-                    "pointValue": 2
+                    "pointValue": 0
                 },
                 {
-                    // Each item in the "actions" array is a SerGIS JSON Action Object
+                    // district 8
                     "actions": [
                         {
                             "name": "explain",
@@ -136,30 +262,122 @@ var SERGIS_JSON_DATA = {
                             ]
                         }
                     ],
-                    "pointValue": 2
+                    "pointValue": 3
                 },
                 {
-                    // Each item in the "actions" array is a SerGIS JSON Action Object
+                    // district 9
                     "actions": [
                         {
                             "name": "explain",
                             "data": [
-                                {"type": "text", "value": "Good choice!"}
+                                {"type": "text", "value": "Bad choice."}
                             ]
                         }
                     ],
-                    "pointValue": 2
+                    "pointValue": 0
+                },
+                {
+                    // district 10
+                    "actions": [
+                        {
+                            "name": "explain",
+                            "data": [
+                                {"type": "text", "value": "Decent choice, but not the best."}
+                            ]
+                        }
+                    ],
+                    "pointValue": 1
                 }
             ]
         },
         
+        {
+            "prompt": {
+                "title": "Malmö",
+                "contents": [
+                    {"type": "text", "value": "Which routes should be used during an evacuation?"}
+                ],
+                "map": {
+                    "frontendInfo": {
+                        "arcgis": {
+                            "layers": [
+                                {
+                                    "name": "Bus Routes",
+                                    "urls": [
+                                        "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/bus_routes/MapServer"
+                                    ]
+                                },
+                                {
+                                    "name": "Walking Paths",
+                                    "urls": [
+                                        "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/walking_paths/MapServer"
+                                    ]
+                                },
+                                {
+                                    "name": "City Tunnels",
+                                    "urls": [
+                                        "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/city_tunnels/MapServer"
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                },
+                "randomizeChoices": false,
+                "choices": [
+                    {"type": "text", "value": "Bus Routes"},
+                    {"type": "text", "value": "Walking Paths"},
+                    {"type": "text", "value": "City Tunnels"}
+                ]
+            },
+            "actionList": [
+                {
+                    "actions": [
+                        {
+                            "name": "explain",
+                            "data": [
+                                {"type": "text", "value": "Good choice! This is obviously the best answer."}
+                            ]
+                        }
+                    ],
+                    "pointValue": 3
+                },
+                {
+                    "actions": [
+                        {
+                            "name": "explain",
+                            "data": [
+                                {"type": "text", "value": "Although this is a viable option, it is not as fast and cannot hold the same volume of people as the bus routes."}
+                            ]
+                        }
+                    ],
+                    "pointValue": 1
+                },
+                {
+                    "actions": [
+                        {
+                            "name": "explain",
+                            "data": [
+                                {"type": "text", "value": "Bad choice! This is obviously the worst answer. The tunnels are underground, and thus would be flooded."}
+                            ]
+                        }
+                    ],
+                    "pointValue": -1
+                }
+            ]
+        },
         
+        // All of the following prompts are just for testing; they're not actually related to Malmö.
         
-        // All of the following prompts are just for testing; they're not actually related to Malmo.
+        {
+            "prompt": {
+                "title": "SerGIS",
+                "contents": [
+                    {"type": "text", "value": "For now, those are the only questions related to Malmö. The rest of the questions show different features of the SerGIS platform."}
+                ]
+            }
+        },
         
-        
-        
-        // Second prompt:
         {
             // "prompt" is a SerGIS JSON Prompt Object
             "prompt": {
@@ -278,16 +496,14 @@ var SERGIS_JSON_DATA = {
             ]
         },
         
-        // Third prompt:
         {
             // "prompt" is a SerGIS JSON Prompt Object
             "prompt": {
-                "title": "Legal Crap Test",
+                "title": "SerGIS",
                 // Each item in the "contents" array is a SerGIS JSON Content Object
                 "contents": [
-                    {"type": "text", "value": "You must agree to this legal crap to continue."},
-                    {"type": "html", "value": "This is just to show what happens if...<br>a) no actions are provided (&quot;I Agree&quot;), and<br>b) <code>goto[0]</code> (&quot;I Disagree&quot;)."},
-                    {"type": "text", "value": "Clicking \"I Disagree\" will take you back to the first prompt, but note how the response to the second prompt (i.e. the buffer) is now gone. This is due to the \"onJumpBack\": \"hide\" setting in the JSON file. (\"jumpingBackAllowed\", \"onJumpBack\", \"jumpingForwardAllowed\", and \"showActionsInUserOrder\" are settings in the JSON file that give you fine-grained control over how users are able to jump between questions and what happens when they do.)", "style": "font-size: 85%"}
+                    {"type": "html", "value": "This example shows what happens if...<br>a) no actions are provided for a choice in the JSON file (the &quot;I Agree&quot; choice), and<br>b) The action <code>goto[0]</code> (the &quot;I Disagree&quot; choice)."},
+                    {"type": "text", "value": "Clicking \"I Disagree\" will take you back to the first non-Malmö prompt, but note how the response to the second non-Malmö prompt (i.e. the buffer) is now gone. This is due to the \"onJumpBack\": \"hide\" setting in the JSON file. (\"jumpingBackAllowed\", \"onJumpBack\", \"jumpingForwardAllowed\", and \"showActionsInUserOrder\" are settings in the JSON file that give you fine-grained control over how users are able to jump between questions and what happens when they do.)", "style": "font-size: 85%"}
                 ],
                 // "map" is a SerGIS JSON Map Object
                 "map": {
@@ -319,21 +535,20 @@ var SERGIS_JSON_DATA = {
                 {
                     // Each item in the "actions" array is a SerGIS JSON Action Object
                     "actions": [
-                        {"name": "goto", "data": [0]}
+                        {"name": "goto", "data": [6]}
                     ]
                 }
             ]
         },
         
-        // Fourth prompt:
         {
             // "prompt" is a SerGIS JSON Prompt Object
             "prompt": {
                 "title": "Test Questions",
                 // Each item in the "contents" array is a SerGIS JSON Content Object
                 "contents": [
-                    {"type": "text", "value": "<b>Hello</b> <i>World!</i> (menos HTML parsing)"},
-                    {"type": "html", "value": "<b>Hello</b> <i>World!</i> (con HTML parsing)"},
+                    {"type": "text", "value": "<b>Hello</b> <i>World!</i> (without HTML parsing)"},
+                    {"type": "html", "value": "<b>Hello</b> <i>World!</i> (with HTML parsing)"},
                     {"type": "image", "value": "http://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/70px-Wikipedia-logo-v2.svg.png"},
                     {"type": "youtube", "value": "dQw4w9WgXcQ"},
                     {"type": "text", "value": "Note the \"Continue\" button (since we didn't provide any choices)"}
