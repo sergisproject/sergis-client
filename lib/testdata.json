@@ -1,25 +1,4 @@
-// This is a SerGIS JSON Game Data file.
-// See http://sergisproject.github.io/docs/json.html
-
-
-/*
-NOTE:
- - Since we can't load a JSON file unless running on a real web server (impractical for development),
-   we're loading this as an actual JavaScript file, hence the assignment to SERGIS_JSON_DATA on the line below.
-
- - Comments (like these) technically are NOT valid JSON. Make sure to remove all the comments in this file when converting back to JSON.
-*/
-
-
-/*
-ARCGIS NOTES:
- - ArcGIS Basemap options are:
-   "streets", "satellite", "hybrid", "topo", "gray", "oceans", "osm", "national-geographic"
-*/
-
-
-// For a production environment, get rid of these comments and the assignment below, and set the location of this file in lib/backends/local.js.
-var SERGIS_JSON_DATA = {
+{
     "jumpingBackAllowed": true,
     "onJumpBack": "hide",
     "jumpingForwardAllowed": true,
@@ -217,7 +196,6 @@ var SERGIS_JSON_DATA = {
             },
             "actionList": [
                 {
-                    // district 2
                     "actions": [
                         {
                             "name": "explain",
@@ -229,7 +207,6 @@ var SERGIS_JSON_DATA = {
                     "pointValue": 1
                 },
                 {
-                    // district 5
                     "actions": [
                         {
                             "name": "explain",
@@ -241,7 +218,6 @@ var SERGIS_JSON_DATA = {
                     "pointValue": 0
                 },
                 {
-                    // district 7
                     "actions": [
                         {
                             "name": "explain",
@@ -253,7 +229,6 @@ var SERGIS_JSON_DATA = {
                     "pointValue": 0
                 },
                 {
-                    // district 8
                     "actions": [
                         {
                             "name": "explain",
@@ -265,7 +240,6 @@ var SERGIS_JSON_DATA = {
                     "pointValue": 3
                 },
                 {
-                    // district 9
                     "actions": [
                         {
                             "name": "explain",
@@ -277,7 +251,6 @@ var SERGIS_JSON_DATA = {
                     "pointValue": 0
                 },
                 {
-                    // district 10
                     "actions": [
                         {
                             "name": "explain",
@@ -367,8 +340,6 @@ var SERGIS_JSON_DATA = {
             ]
         },
         
-        // All of the following prompts are just for testing; they're not actually related to Malmö.
-        
         {
             "prompt": {
                 "title": "SerGIS",
@@ -379,16 +350,13 @@ var SERGIS_JSON_DATA = {
         },
         
         {
-            // "prompt" is a SerGIS JSON Prompt Object
             "prompt": {
                 "title": "Introduction",
-                // Each item in the "contents" array is a SerGIS JSON Content Object
                 "contents": [
                     {"type": "html", "value": "<b>Hello</b> <i>World!</i>"},
                     {"type": "text", "value": "Note how the choice positions are randomized for this prompt. Also, each choice's content is defined in a different way."},
                     {"type": "html", "value": "Select &quot;Choice <b>NUMBER 1</b>&quot; to see an example of a buffer and an explanation."}
                 ],
-                // "map" is a SerGIS JSON Map Object
                 "map": {
                     "latitude": 55.6,
                     "longitude": 13,
@@ -408,29 +376,21 @@ var SERGIS_JSON_DATA = {
                     }
                 },
                 "randomizeChoices": true,
-                // Each item in the "choices" array is a SerGIS JSON Content Object
                 "choices": [
-                    // First choice:
                     {"type": "html", "value": "Choice <b>NUMBER 1</b>"},
-                    // Second choice:
                     {"type": "text", "value": "Choice <2>"},
-                    // Third choice:
                     {"type": "image", "value": "http://www.text2image.com/user_images/text2image_R45488_20141117_035359.jpg"}
                 ]
             },
             "actionList": [
-                // First choice's actions:
                 {
-                    // Each item in the "actions" array is a SerGIS JSON Action Object
                     "actions": [
-                        // This is an "explain" action
                         {
                             "name": "explain",
                             "data": [
                                 {"type": "text", "value": "Good choice! Once you click \"Continue\", a polygon will be drawn and a buffer will be placed around it."}
                             ]
                         },
-                        // This is a "draw" action (specific to the "arcgis" frontend)
                         {
                             "name": "draw",
                             "frontend": "arcgis",
@@ -453,14 +413,12 @@ var SERGIS_JSON_DATA = {
                                 ]
                             ]
                         },
-                        // This is an "explain" action
                         {
                             "name": "explain",
                             "data": [
                                 {"type": "text", "value": "There's a polygon! Next we'll buffer it..."}
                             ]
                         },
-                        // This is a "buffer" action (specific to the "arcgis" frontend)
                         {
                             "name": "buffer",
                             "frontend": "arcgis",
@@ -470,7 +428,6 @@ var SERGIS_JSON_DATA = {
                                 "firstPromptDrawing"
                             ]
                         },
-                        // This is an "explain" action
                         {
                             "name": "explain",
                             "data": [
@@ -481,15 +438,11 @@ var SERGIS_JSON_DATA = {
                     ],
                     "pointValue": 5
                 },
-                // Second choice's actions:
                 {
-                    // Each item in the "actions" array is a SerGIS JSON Action Object
                     "actions": [],
                     "pointValue": 2
                 },
-                // Third choice's actions:
                 {
-                    // Each item in the "actions" array is a SerGIS JSON Action Object
                     "actions": [],
                     "pointValue": 2
                 }
@@ -497,15 +450,12 @@ var SERGIS_JSON_DATA = {
         },
         
         {
-            // "prompt" is a SerGIS JSON Prompt Object
             "prompt": {
                 "title": "SerGIS",
-                // Each item in the "contents" array is a SerGIS JSON Content Object
                 "contents": [
                     {"type": "html", "value": "This example shows what happens if...<br>a) no actions are provided for a choice in the JSON file (the &quot;I Agree&quot; choice), and<br>b) The action <code>goto[0]</code> (the &quot;I Disagree&quot; choice)."},
                     {"type": "text", "value": "Clicking \"I Disagree\" will take you back to the first non-Malmö prompt, but note how the response to the second non-Malmö prompt (i.e. the buffer) is now gone. This is due to the \"onJumpBack\": \"hide\" setting in the JSON file. (\"jumpingBackAllowed\", \"onJumpBack\", \"jumpingForwardAllowed\", and \"showActionsInUserOrder\" are settings in the JSON file that give you fine-grained control over how users are able to jump between questions and what happens when they do.)", "style": "font-size: 85%"}
                 ],
-                // "map" is a SerGIS JSON Map Object
                 "map": {
                     "latitude": 30,
                     "longitude": -20,
@@ -517,23 +467,14 @@ var SERGIS_JSON_DATA = {
                     }
                 },
                 "choices": [
-                    // First choice:
                     {"type": "text", "value": "I Agree"},
-                    // Second choice:
                     {"type": "text", "value": "I Disagree"}
                 ]
             },
             "actionList": [
-                // First choice's actions:
                 {
-                    // No actions, so doesn't do anything before going on to the next prompt
-                    // (You could provide an empty array, but not providing anything works just as well)
-                    // (Just make sure that there's an empty object here to hold the place in actionList)
-                    //"actions": []
                 },
-                // Second choice's actions:
                 {
-                    // Each item in the "actions" array is a SerGIS JSON Action Object
                     "actions": [
                         {"name": "goto", "data": [6]}
                     ]
@@ -542,10 +483,8 @@ var SERGIS_JSON_DATA = {
         },
         
         {
-            // "prompt" is a SerGIS JSON Prompt Object
             "prompt": {
                 "title": "Test Questions",
-                // Each item in the "contents" array is a SerGIS JSON Content Object
                 "contents": [
                     {"type": "text", "value": "<b>Hello</b> <i>World!</i> (without HTML parsing)"},
                     {"type": "html", "value": "<b>Hello</b> <i>World!</i> (with HTML parsing)"},
@@ -553,7 +492,6 @@ var SERGIS_JSON_DATA = {
                     {"type": "youtube", "value": "dQw4w9WgXcQ"},
                     {"type": "text", "value": "Note the \"Continue\" button (since we didn't provide any choices)"}
                 ],
-                // "map" is a SerGIS JSON Map Object
                 "map": {
                     "latitude": 55.6,
                     "longitude": 13,
