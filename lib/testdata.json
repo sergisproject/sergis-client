@@ -489,7 +489,7 @@
                     {"type": "text", "value": "<b>Hello</b> <i>World!</i> (without HTML parsing)"},
                     {"type": "html", "value": "<b>Hello</b> <i>World!</i> (with HTML parsing)"},
                     {"type": "image", "value": "http://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/70px-Wikipedia-logo-v2.svg.png"},
-                    {"type": "youtube", "value": "dQw4w9WgXcQ"},
+                    {"type": "youtube", "value": "YKpIK2ibvUM"},
                     {"type": "text", "value": "Note the \"Continue\" button (since we didn't provide any choices)"}
                 ],
                 "map": {
