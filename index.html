@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8">
     <title>SerGIS</title>
-    <link rel="stylesheet" type="text/css" href="lib/style.css">
+    <link rel="stylesheet" type="text/css" href="lib/style.css" data-set-attribute="href style.css">
     <!-- ESRI ArcGIS API stylesheet -->
     <link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.11/esri/css/esri.css">
 </head>
@@ -95,16 +95,16 @@
 -->
 
 <!-- ES6 Promise polyfill -->
-<script type="text/javascript" src="lib/es6-promise-2.0.0.min.js"></script>
+<script type="text/javascript" src="lib/es6-promise-2.0.0.min.js" data-set-attribute="src es6-promise-2.0.0.min.js"></script>
 
 <!-- SerGIS main library (must be first of our stuff) -->
-<script type="text/javascript" src="lib/main.js"></script>
+<script type="text/javascript" src="lib/main.js" data-set-attribute="src main.js"></script>
 
 <!-- SerGIS client frontend -->
-<script type="text/javascript" src="lib/frontends/arcgis.js"></script>
+<script type="text/javascript" src="lib/frontends/arcgis.js" data-set-attribute="src frontend-script-src"></script>
 
 <!-- SerGIS client backend -->
-<script id="sergis-backend-script" type="text/javascript" src="lib/backends/local.js" data-set-attribute="src backend-script-src; data-username backend-script-username"></script>
+<script id="sergis-backend-script" type="text/javascript" src="lib/backends/local.js" data-set-attribute="src backend-script-src; data-username backend-script-username; data-socket-io-origin socket-io-origin"></script>
 
 <script>
 /*
