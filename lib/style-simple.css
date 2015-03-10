@@ -1,0 +1,33 @@
+body {
+    font-family: sans-serif;
+    background-color: #D9D2B0;
+    color: #402319
+}
+
+header {
+    text-align: center;
+    color: #395273;
+    border-bottom: 1px solid #395273;
+}
+
+section {
+    max-width: 1000px;
+    margin: 10px auto;
+}
+
+th {
+    border-bottom: 1px solid black;
+}
+
+td {
+    vertical-align: top;
+}
+
+div.codeholder {
+    max-height: 120px;
+    overflow: hidden;
+}
+
+input[type=checkbox]:checked + div.codeholder {
+    max-height: none;
+}
