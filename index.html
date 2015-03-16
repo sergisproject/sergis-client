@@ -21,7 +21,7 @@
             <ul id="main-toolbox-buttons" class="buttons"></ul>
             <span id="main-toolbox-status"></span>
         </div>
-        <div class="account">Logged in as <span id="main-displayName"></span>.<br><button id="main-logout">Log Out</button></div>
+        <div class="account"><span id="main-displayName"></span><br><span id="main-button-container"></span><button id="main-logout" style="display: none;">Log Out</button></div>
     </header>
     
     <section id="map-container" class="with-sidebar">Loading map...</section>
@@ -104,7 +104,7 @@
 <script type="text/javascript" src="lib/frontends/arcgis.js" data-set-attribute="src frontend-script-src"></script>
 
 <!-- SerGIS client backend -->
-<script id="sergis-backend-script" type="text/javascript" src="lib/backends/local.js" data-set-attribute="src backend-script-src; data-gameName gameName; data-socket-io-origin socket-io-origin; data-socket-io-prefix socket-io-prefix"></script>
+<script id="sergis-backend-script" type="text/javascript" src="lib/backends/local.js" data-set-attribute="src backend-script-src; data-socket-io-origin socket-io-origin; data-socket-io-prefix socket-io-prefix; data-gameName gameName; data-gameUsername gameUsername; data-session session; data-logoutUrl logoutUrl"></script>
 
 <script data-set-if="test">
 /*
