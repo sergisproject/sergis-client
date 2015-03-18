@@ -119,6 +119,14 @@ ul.buttons li:active, button:active, input[type=submit]:active {
     text-align: center;
 }
 
+#loading-text {
+    color: white;
+}
+
+#loading-text a {
+    color: white;
+}
+
 /* HEADER STYLES */
 
 header {
