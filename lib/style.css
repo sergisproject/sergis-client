@@ -57,6 +57,7 @@ ul.buttons li, button, input[type=submit] {
     position: relative;
     color: white;
     font-size: 14px;
+    white-space: nowrap;
     
     border: 1px solid white;
     border-radius: 5px;
@@ -130,7 +131,7 @@ ul.buttons li:active, button:active, input[type=submit]:active {
 /* HEADER STYLES */
 
 header {
-    display: block;
+    display: table-row;
     position: absolute;
     top: 0;
     left: 0;
@@ -144,11 +145,7 @@ header {
 header h1 {
     margin: 0;
     padding: 15px;
-    float: left;
-    height: 100%;
-    height: -webkit-calc(100% - 30px);
-    height: -moz-calc(100% - 30px);
-    height: calc(100% - 30px);
+    display: table-cell;
     
     box-shadow: 1px 0 5px white;
     
@@ -162,19 +159,26 @@ header h1 {
 }
 
 header div.toolbox {
-    display: inline-block;
-    margin: 11px 30px;
+    display: table-cell;
+    width: 100%;
+    vertical-align: top;
+    height: 100%;
+    
+}
+
+header div.toolbox > div {
     padding: 15px;
-    height: 20px;
+    line-height: 150%;
+    overflow: auto;
+    height: 100%;
 }
 
 header div.account {
-    float: right;
-    height: 100%;
-    display: inline-block;
-    padding: 15px;
+    display: table-cell;
+    padding: 0 15px;
     line-height: 150%;
     text-align: right;
+    vertical-align: top;
     
     box-shadow: -1px 0 5px white;
     
