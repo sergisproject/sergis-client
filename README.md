@@ -6,12 +6,16 @@ The web-based client for [the SerGIS Project](http://sergisproject.github.io/)
 
  - `index.html` - The main HTML file
  - `lib` - Directory of static resources (CSS stylesheets and JavaScript files)
-   - `backends` - Directory of [SerGIS backends](http://sergisproject.github.io/docs/client.html#backends)
+   - `backends` - Directory of [SerGIS backends](http://sergisproject.github.io/legacy-docs/client.html#backends)
      - `local.js` - A special backend that uses local files instead of accessing a server for data
-   - `frontends` - Directory of [SerGIS frontends](http://sergisproject.github.io/docs/client.html#frontends)
+     - `sergis-server.js` - A backend that uses [SerGIS Server](https://github.com/sergisproject/sergis-server)
+   - `frontends` - Directory of [SerGIS frontends](http://sergisproject.github.io/legacy-docs/client.html#frontends)
+     - `arcgis.js` - A frontend that uses the ArcGIS JavaScript API to render the map
    - `es6-promise-2.0.0.min.js` - JavaScript Promise polyfill (modified for compatibility with ArcGIS API)
    - `main.js` - The main JavaScript file
    - `style.css` - The main CSS stylesheet
+   - `style-simple.css` - A simpler CSS stylesheet (used for templated pages in [sergis-server](https://github.com/sergisproject/sergis-server))
+   - `testdata.json` - Some sample [SerGIS JSON Game Data](http://sergisproject.github.io/legacy-docs/json.html) that is used by the `local.js` backend
 
 ## License
 
