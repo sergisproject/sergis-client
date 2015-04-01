@@ -55,6 +55,10 @@ header ul.breadcrumbs li:not(:first-child)::before {
     padding-right: 10px;
 }
 
+.titlelinks {
+    float: right;
+}
+
 h2 {
     border-bottom: 1px solid #046380;
 }
