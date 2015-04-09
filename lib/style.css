@@ -120,7 +120,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 70px;
+    height: 50px;
     
     background-color: #434b55;
     color: white;
@@ -128,7 +128,7 @@ header {
 
 header h1 {
     margin: 0;
-    padding: 15px;
+    padding: 5px;
     display: table-cell;
     
     box-shadow: 1px 0 5px white;
@@ -161,21 +161,19 @@ ul.buttons {
     display: inline;
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 0px;
 }
 
 ul.buttons li {
     margin: 0;
-    padding: 2px 2px;
+    padding: 20px 15px;
     display: inline;
     position: relative;
-    color: white;
     font-size: 14px;
     white-space: nowrap;
     
     border: 1px solid white;
-    border-radius: 5px;
-    box-shadow: 0 0 2px white;
+    box-shadow: 0 0 1px white;
     cursor: pointer;
     
     background-color: #434b55;
@@ -185,10 +183,6 @@ ul.buttons li {
     background-image: -o-linear-gradient(#6c7989, #434b55);
     background-image: -ms-linear-gradient(#6c7989, #434b55);
     background-image: linear-gradient(#6c7989, #434b55);
-}
-
-ul.buttons li {
-    margin-right: 10px;
 }
 
 ul.buttons li:focus,
@@ -236,14 +230,13 @@ header div.account > span {
 section {
     display: block;
     position: absolute;
-    top: 70px;
+    top: 50px;
     bottom: 0;
     left: 0;
     right: 0;
 }
 
 section.with-sidebar {
-    right: 450px;
     
     background-color: #434b55;
     color: white;
@@ -265,14 +258,14 @@ section h2 {
 aside {
     display: block;
     position: absolute;
-    top: 70px;
+    top: 50px;
     bottom: 0;
     right: 0;
     width: 450px;
     
     border-top: 2px solid #6c7989;
     
-    background-color: #fafafa;
+    background-color: rgba(100,100,100, 0.5);
 }
 
 aside.aside-overall {
@@ -348,7 +341,7 @@ aside footer div.copyright {
 div.resizer {
     position: absolute;
     width: 5px;
-    top: 70px;
+    top: 50px;
     bottom: 0;
     cursor: col-resize;
     right: 450px;
