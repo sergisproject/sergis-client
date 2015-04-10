@@ -220,11 +220,6 @@ section {
     right: 0;
 }
 
-section.with-map {
-    background-color: #434b55;
-    color: white;
-}
-
 section h2 {
     text-align: center;
 }
@@ -259,7 +254,6 @@ aside {
     border-top: 2px solid #6c7989;
     
     background-color: rgba(240,240,240, 0.8);
-    color: black;
 }
 
 aside.aside-overall {
