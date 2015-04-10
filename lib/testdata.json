@@ -1,4 +1,9 @@
 {
+    "layout": {
+        "defaultSidebarWidthRatio": 0.3,
+        "disableSidebarResizing": false,
+        "disableTranslucentSidebar": false
+    },
     "jumpingBackAllowed": true,
     "onJumpBack": "hide",
     "jumpingForwardAllowed": true,
