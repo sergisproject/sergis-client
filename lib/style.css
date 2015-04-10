@@ -252,8 +252,11 @@ aside {
     width: 450px; /* modified in JS */
     
     border-top: 2px solid #6c7989;
-    
-    background-color: rgba(240,240,240, 0.8);
+}
+
+aside, div.popup {
+    /* Pretty much, anything overlaid on top of the map... */
+    background-color: rgba(240, 240, 240, 0.8);
 }
 
 aside.aside-overall {
@@ -350,8 +353,7 @@ div.popup {
     
     border: 2px solid #6c7989;
     border-radius: 5px;
-    
-    background-color: rgba(255, 255, 255, 0.75);
+    /* background-color is set up above, with aside, since they both overlay the map */
 }
 
 div.popup h2 {
