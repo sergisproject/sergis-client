@@ -16,35 +16,36 @@
 
 <div id="main-wrapper" style="display: none;">
     <header class="noselect">
-        <h1>SerGIS</h1>
+        <h1 id="main-header-title"><a id="main-header-title-link">SerGIS</a></h1>
         <div id="main-toolbox" class="toolbox">
             <div>
                 <ul id="main-toolbox-buttons" class="buttons"></ul>
                 <span id="main-toolbox-status"></span>
             </div>
         </div>
-        <div class="account"><span id="main-displayName"></span><br><span id="main-button-container"></span><button id="main-logout" style="display: none;">Log Out</button></div>
     </header>
     
-    <section id="map-container" class="with-sidebar">Loading map...</section>
-    
-    <aside id="sidebar" class="noselect">
-        <h2 id="sidebar-title"><span id="sidebar-title-number" style="float: right;">#</span><span id="sidebar-title-text">title</span></h2>
-        <div id="sidebar-content" class="content">Loading content...</div>
-        <footer id="sidebar-footer">
-            <div id="sidebar-footer-navigation" class="progress"><button id="navigation-previous" style="display: none;">Back</button><button id="navigation-next" style="display: none;">Skip</button>Page <span id="navigation-promptNumber"></span> of <span id="navigation-promptCount"></span></div>
-        </footer>
-    </aside>
-    
-    <aside id="sidebar-overlay" class="aside-overall noselect" style="display: none;">
-        <table><tbody><tr><td>
-            <div id="sidebar-overlay-content" style="display: none;"></div>
-            <p id="sidebar-overlay-loading">Loading...</p>
-        </td></tr></tbody></table>
-    </aside>
-    
-    <div id="map-popup" class="popup" style="display: none;"></div>
-    <div id="sidebar-resizer" class="resizer noselect"></div>
+    <section>
+        <div id="map-container" class="with-sidebar">Loading map...</div>
+
+        <aside id="sidebar" class="noselect">
+            <h2 id="sidebar-title"><span id="sidebar-title-text">title</span></h2>
+            <div id="sidebar-content" class="content">Loading content...</div>
+            <footer id="sidebar-footer">
+                <div id="sidebar-footer-navigation" class="progress"><button id="navigation-previous" style="display: none;">Back</button><button id="navigation-next" style="display: none;">Skip</button>Page <span id="navigation-promptNumber"></span> of <span id="navigation-promptCount"></span></div>
+            </footer>
+        </aside>
+
+        <aside id="sidebar-overlay" class="aside-overall noselect" style="display: none;">
+            <table><tbody><tr><td>
+                <div id="sidebar-overlay-content" style="display: none;"></div>
+                <p id="sidebar-overlay-loading">Loading...</p>
+            </td></tr></tbody></table>
+        </aside>
+
+        <div id="map-popup" class="popup" style="display: none;"></div>
+        <div id="sidebar-resizer" class="resizer noselect"></div>
+    </section>
 </div>
 
 <div id="login-wrapper" style="display: none;">
