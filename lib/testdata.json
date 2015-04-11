@@ -511,7 +511,8 @@
                 },
                 "choices": [
                     {"type": "text", "value": "I Agree"},
-                    {"type": "text", "value": "I Disagree"}
+                    {"type": "text", "value": "I Disagree"},
+                    {"type": "text", "value": "End Game Now"}
                 ]
             },
             "actionList": [
@@ -520,6 +521,11 @@
                 {
                     "actions": [
                         {"name": "goto", "data": [6]}
+                    ]
+                },
+                {
+                    "actions": [
+                        {"name": "endGame"}
                     ]
                 }
             ]
