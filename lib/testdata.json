@@ -28,6 +28,22 @@
                             "basemap": "gray"
                         }
                     }
+                },
+                "buttons": {
+                    "arcgis": {
+                        "findPath": {
+                            "disabled": true
+                        },
+                        "drawPoint": {
+                            "hidden": true
+                        },
+                        "drawPolyline": {
+                            "hidden": true
+                        },
+                        "drawPolygon": {
+                            "hidden": true
+                        }
+                    }
                 }
             }
         },
@@ -47,6 +63,19 @@
                     "frontendInfo": {
                         "arcgis": {
                             "basemap": "hybrid"
+                        }
+                    }
+                },
+                "buttons": {
+                    "arcgis": {
+                        "drawPoint": {
+                            "hidden": false
+                        },
+                        "drawPolyline": {
+                            "hidden": false
+                        },
+                        "drawPolygon": {
+                            "hidden": false
                         }
                     }
                 }

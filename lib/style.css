@@ -189,8 +189,13 @@ ul.buttons li {
     background-image: linear-gradient(#6c7989, #434b55);
 }
 
-ul.buttons li:focus,
-ul.buttons li:hover {
+ul.buttons li[disabled] {
+    cursor: default;
+    background-image: none;
+}
+
+ul.buttons li:not([disabled]):focus,
+ul.buttons li:not([disabled]):hover {
     text-shadow: white 0 0 2px;
 }
 
@@ -198,12 +203,12 @@ ul.buttons li span {
     position: relative;
 }
 
-ul.buttons li:hover span {
+ul.buttons li:not([disabled]):hover span {
     top: -1px;
     left: -1px;
 }
 
-ul.buttons li:active span {
+ul.buttons li:not([disabled]):active span {
     top: 0;
     left: 0;
 }
