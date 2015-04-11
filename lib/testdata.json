@@ -413,7 +413,8 @@
                 "choices": [
                     {"type": "html", "value": "Choice <b>NUMBER 1</b>"},
                     {"type": "text", "value": "Choice <2>"},
-                    {"type": "image", "value": "http://www.text2image.com/user_images/text2image_R45488_20141117_035359.jpg"}
+                    {"type": "image", "value": "http://www.text2image.com/user_images/text2image_R45488_20141117_035359.jpg"},
+                    {"type": "text", "value": "(invalid action)"}
                 ]
             },
             "actionList": [
@@ -479,6 +480,14 @@
                 {
                     "actions": [],
                     "pointValue": 2
+                },
+                {
+                    "actions": [
+                        {
+                            "name": "TESTACTION"
+                        }
+                    ],
+                    "pointValue": 0
                 }
             ]
         },
