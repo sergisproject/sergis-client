@@ -511,17 +511,25 @@
                 },
                 "choices": [
                     {"type": "text", "value": "I Agree"},
-                    {"type": "text", "value": "I Disagree"},
-                    {"type": "text", "value": "End Game Now"}
+                    {"type": "text", "value": "I Disagree (goto 6)"},
+                    {"type": "text", "value": "I Disagree (goto 6) (deprecated)"},
+                    {"type": "text", "value": "End Game Now"},
+                    {"type": "text", "value": "End Game Now (deprecated)"}
                 ]
             },
             "actionList": [
                 {
                 },
                 {
+                    "nextPrompt": 6
+                },
+                {
                     "actions": [
                         {"name": "goto", "data": [6]}
                     ]
+                },
+                {
+                    "nextPrompt": "end"
                 },
                 {
                     "actions": [
