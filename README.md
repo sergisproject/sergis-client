@@ -7,6 +7,7 @@ The web-based client for [the SerGIS Project](http://sergisproject.github.io/)
  - `index.html` - The main HTML file
  - `lib` - Directory of static resources (CSS stylesheets and JavaScript files)
    - `backends` - Directory of [SerGIS backends](http://sergisproject.github.io/docs/client.html#backends)
+     - `game-common.js` - Common code that is shared between multiple backends
      - `local.js` - A special backend that uses local files instead of accessing a server for data
      - `sergis-server.js` - A backend that uses [SerGIS Server](https://github.com/sergisproject/sergis-server)
    - `frontends` - Directory of [SerGIS frontends](http://sergisproject.github.io/docs/client.html#frontends)
