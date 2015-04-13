@@ -17,6 +17,14 @@ The web-based client for [the SerGIS Project](http://sergisproject.github.io/)
    - `style-simple.css` - A simpler CSS stylesheet (used for templated pages in [sergis-server](https://github.com/sergisproject/sergis-server))
    - `testdata.json` - Some sample [SerGIS JSON Game Data](http://sergisproject.github.io/docs/json.html) that is used by the `local.js` backend
 
+## TODO
+
+- make little thingie below map popup the first time we use it to tell the user that they can toggle layers
+- json for changing map projection (and/or ability for user to change it in toolbar)
+- ability for user to change basemap in toolbar (so, this and the projection would have defaults in the JSON and be changable by the user in the toolbar; this would be prompt-specific)
+- Make "Find Path" work
+
+
 ## License
 
     Copyright (c) 2015, SerGIS Project Contributors. All rights reserved.
