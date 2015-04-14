@@ -245,6 +245,32 @@ section h2 {
     color: black;
 }
 
+/* COLLECTIBLES STYLES */
+/*<collectibles-container */
+
+#collectibles-container {
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 30px;
+	
+	border-left: 3px solid #6c7989;
+	background-color: #434b55;
+	
+	z-index: 20;
+	
+	position: absolute;
+}
+
+#collectibles-bar{
+	bottom: 0px;
+	height: 50px;
+	width:100%;
+	
+	background-color: #00FF00;
+	border-left: 8px solid #99FF99;
+}
+
 /* ASIDE STYLES */
 /* <aside> is used for the sidebar */
 
@@ -280,7 +306,7 @@ aside footer {
     position: absolute;
     bottom: 0;
     left: 0;
-    right: 0;
+    right: 30px;
     
     border-top: 2px solid #6c7989;
 }
@@ -289,7 +315,7 @@ aside div.content {
     overflow: auto;
     position: absolute;
     left: 0;
-    right: 0;
+    right: 30px;
     padding: 10px;
 }
 
