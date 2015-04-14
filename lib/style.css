@@ -246,9 +246,14 @@ section h2 {
 }
 
 /* COLLECTIBLES STYLES */
-/*<collectibles-container */
 
 #collectibles-container {
+    display: none;
+}
+
+.with-collectibles #collectibles-container {
+    display: block;
+	position: absolute;
 	top: 0;
 	bottom: 0;
 	right: 0;
@@ -258,14 +263,12 @@ section h2 {
 	background-color: #434b55;
 	
 	z-index: 20;
-	
-	position: absolute;
 }
 
-#collectibles-bar{
+#collectibles-bar {
 	bottom: 0px;
 	height: 50px;
-	width:100%;
+	width: 100%;
 	
 	background-color: #00FF00;
 	border-left: 8px solid #99FF99;
@@ -306,17 +309,25 @@ aside footer {
     position: absolute;
     bottom: 0;
     left: 0;
-    right: 30px;
+    right: 0;
     
     border-top: 2px solid #6c7989;
+}
+
+aside.with-collectibles footer {
+    right: 30px;
 }
 
 aside div.content {
     overflow: auto;
     position: absolute;
     left: 0;
-    right: 30px;
+    right: 0;
     padding: 10px;
+}
+
+aside.with-collectibles div.content {
+    right: 30px;
 }
 
 aside div.content > div {
