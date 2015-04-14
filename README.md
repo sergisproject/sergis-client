@@ -24,6 +24,7 @@ The web-based client for [the SerGIS Project](http://sergisproject.github.io/)
 - json for changing map projection (and/or ability for user to change it in toolbar)
 - ability for user to change basemap in toolbar (so, this and the projection would have defaults in the JSON and be changable by the user in the toolbar; this would be prompt-specific)
 - Make "Find Path" work
+- Add option to "Restart Game" when score is shown
 
 
 ## License
