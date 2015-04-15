@@ -8,7 +8,13 @@
 <head>
     <meta charset="utf-8">
     <title>SerGIS</title>
-    <link rel="stylesheet" type="text/css" href="lib/style.css" data-set-attribute="href style.css">
+
+    <!-- {{#if stylesheetPath}}{{{endComment}}}
+    <link rel="stylesheet" type="text/css" href="{{stylesheetPath}}">
+    {{{startComment}}}{{else}} -->
+    <link rel="stylesheet" type="text/css" href="lib/style.css">
+    <!-- {{/if}} -->
+
     <!-- ESRI ArcGIS API stylesheet -->
     <link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.11/esri/css/esri.css">
 </head>
@@ -86,7 +92,9 @@
 -->
 
 <!-- socket.io API (if applicable) -->
-<script type="text/javascript" data-set-attribute="src socket-io-script-src"></script>
+<!-- {{#if socket_io_script_src}}{{{endComment}}}
+<script type="text/javascript" src="{{socket_io_script_src}}"></script>
+{{{startComment}}}{{/if}} -->
 
 <!-- ESRI ArcGIS API -->
 <script type="text/javascript" src="http://js.arcgis.com/3.11/"></script>
@@ -100,122 +108,24 @@
   **********************
 -->
 
+<!-- The following mess is in case we are running from sergis-server.
+{{#if client_js_src}}{{{endComment}}}
+<script id="sergis-backend-script" type="text/javascript" src="{{client_js_src}}" data-socket-io-origin="{{socket_io_origin}}" data-socket-io-prefix="{{socket_io_prefix}}" data-session="{{session}}" data-game="{{game}}"></script>
+{{#if test}}<script type="text/javascript">{{{test}}}</script>{{/if}}
+{{{startComment}}}{{else}} -->
+
 <!-- ES6 Promise polyfill -->
-<script type="text/javascript" src="lib/es6-promise-2.0.0.min.js" data-set-attribute="src es6-promise-2.0.0.min.js"></script>
-
-<!-- Concatenated and minified scripts (if available) -->
-<script id="sergis-backend-script" type="text/javascript" data-set-attribute="src client-js-src; data-socket-io-origin socket-io-origin; data-socket-io-prefix socket-io-prefix; data-game game; data-session session"></script>
-
+<script type="text/javascript" src="lib/es6-promise-2.0.0.min.js"></script>
 
 <!-- SerGIS main library (if there's no minified version) - MUST be first of our stuff -->
-<script type="text/javascript" src="lib/main.js" data-set-if="no-minified"></script>
+<script type="text/javascript" src="lib/main.js"></script>
 <!-- SerGIS client frontend -->
-<script type="text/javascript" src="lib/frontends/arcgis.js" data-set-if="no-minified"></script>
+<script type="text/javascript" src="lib/frontends/arcgis.js"></script>
 <!-- SerGIS client backend -->
-<script type="text/javascript" src="lib/backends/game-common.js" data-set-if="no-minified"></script>
-<script type="text/javascript" src="lib/backends/local.js" data-set-if="no-minified"></script>
+<script type="text/javascript" src="lib/backends/game-common.js"></script>
+<script type="text/javascript" src="lib/backends/local.js"></script>
 
-
-<script data-set-if="test" data-set-text="html test">
-/*
-Test function to test draw and buffer functionality.
-
-   lat1 (number) - latitude of first end of line (default: 55)
-   lng1 (number) - longitude of first end of line (default: 13)
-   lat2 (number) - latitude of second end of line (default: 60)
-   lng2 (number) - longitude of second end of line (default: 20)
-   bufferDistance (number) - distance to buffer (default: 20)
-   bufferUnits (string) - see SerGIS_ArcGIS~Unit in arcgis.js (default: miles)
-   bufferStyle (object) - see SerGIS_ArcGIS~DrawStyle in arcgis.js
-*/
-function testDrawLineAndBuffer(lat1, lng1, lat2, lng2, bufferDistance, bufferUnits, bufferStyle) {
-    sergis.frontend.actions.clearGraphics().then(
-        function () {
-            sergis.frontend.actions.draw(
-                (lis = "o" + Math.random()),
-                "line",
-                {dotStyle: "square", lineStyle: "LongDash", lineWidth: 2},
-                [{latitude: lat1 || 55, longitude: lng1 || 13}, {latitude: lat2 || 60, longitude: lng2 || 20}]
-            ).then(
-                function () {
-                    sergis.frontend.actions.buffer(
-                        bufferDistance || 20,
-                        bufferUnits || "statute_mile",
-                        lis,
-                        bufferStyle
-                    ).then(
-                        console.log.bind(console, "Buffer Resolved"),
-                        console.error.bind(console, "Buffer Rejected")
-                    ).catch(sergis.error);
-                },
-                console.error.bind(console, "Draw Rejected")
-            ).catch(sergis.error);
-        },
-        console.error.bind(console, "Clear Rejected")
-    ).catch(sergis.error);
-}
-
-
-/*
-Test function to test draw and buffer functionality.
-
-   bufferDistance (number) - distance to buffer (default: 20)
-   bufferUnits (string) - see SerGIS_ArcGIS~Unit in arcgis.js (default: miles)
-   bufferStyle (object) - see SerGIS_ArcGIS~DrawStyle in arcgis.js
-*/
-function testDrawPolygonsAndBuffer(bufferDistance, bufferUnits, bufferStyle) {
-    sergis.frontend.actions.clearGraphics().then(
-        function () {
-            sergis.frontend.actions.draw(
-                (lis = "o" + Math.random()),
-                "polygon",
-                [
-                    {
-                        "latitude": 55.6,
-                        "longitude": 12
-                    },
-                    {
-                        "latitude": 57,
-                        "longitude": 14
-                    },
-                    {
-                        "latitude": 55.6,
-                        "longitude": 15
-                    }
-                ],
-                [
-                    {
-                        "latitude": 55,
-                        "longitude": 12
-                    },
-                    {
-                        "latitude": 54,
-                        "longitude": 14
-                    },
-                    {
-                        "latitude": 56,
-                        "longitude": 14
-                    }
-                ]
-            ).then(
-                function () {
-                    sergis.frontend.actions.buffer(
-                        bufferDistance || 20,
-                        bufferUnits || "statute_mile",
-                        lis,
-                        bufferStyle
-                    ).then(
-                        console.log.bind(console, "Buffer Resolved"),
-                        console.error.bind(console, "Buffer Rejected")
-                    ).catch(sergis.error);
-                },
-                console.error.bind(console, "Draw Rejected")
-            ).catch(sergis.error);
-        },
-        console.error.bind(console, "Clear Rejected")
-    ).catch(sergis.error);
-}
-</script>
+<!-- {{/if}} -->
 
 </body>
 </html>
