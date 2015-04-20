@@ -15,7 +15,7 @@ The web-based client for [the SerGIS Project](http://sergisproject.github.io/)
    - `es6-promise.js` - JavaScript Promise polyfill (modified for compatibility with ArcGIS API)
    - `main.js` - The main JavaScript file
    - `style.css` - The main CSS stylesheet
-   - `style-simple.css` - A simpler CSS stylesheet (used for templated pages in [sergis-server](https://github.com/sergisproject/sergis-server))
+   - `style-simple.css` - A simpler CSS stylesheet (used to be used for templated pages in [sergis-server](https://github.com/sergisproject/sergis-server))
    - `testdata.json` - Some sample [SerGIS JSON Game Data](http://sergisproject.github.io/docs/json.html) that is used by the `local.js` backend
 
 ## TODO
