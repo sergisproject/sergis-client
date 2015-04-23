@@ -385,13 +385,21 @@ div.resizer {
 /* POPUP STYLES */
 /* Used for the boxes in the top-right corner of the map */
 
-div.popup {
+div.popup-container {
     position: absolute;
     top: 0;
     right: 450px; /* modified in JS */
-    margin: 5px 10px 10px 10px;
+    /* max-width: 50%; */
+    height: 100%;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+
+div.popup {
     padding: 10px;
-    /* max-width: 15%; */
+    max-height: 100%;
+    overflow: auto;
+    box-sizing: border-box;
     
     border: 2px solid #6c7989;
     border-radius: 5px;
