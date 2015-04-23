@@ -101,6 +101,7 @@
                                 {
                                     "name": "Accidents (by jenks)",
                                     "opacity": 0.83,
+                                    "group": "accidents",
                                     "urls": [
                                         "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/accidents_jenks/MapServer"
                                     ]
@@ -108,6 +109,7 @@
                                 {
                                     "name": "Accidents (by equal interval)",
                                     "opacity": 0.83,
+                                    "group": "accidents",
                                     "urls": [
                                         "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/accidents_equalinterval/MapServer"
                                     ]
@@ -189,6 +191,7 @@
                                 {
                                     "name": "Accidents (by jenks)",
                                     "opacity": 0.83,
+                                    "group": "accidents / illness",
                                     "urls": [
                                         "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/accidents_jenks/MapServer"
                                     ]
@@ -196,6 +199,7 @@
                                 {
                                     "name": "Illness (by jenks)",
                                     "opacity": 0.83,
+                                    "group": "accidents / illness",
                                     "urls": [
                                         "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/illness_jenks/MapServer"
                                     ]
@@ -203,6 +207,7 @@
                                 {
                                     "name": "Accidents (by equal interval)",
                                     "opacity": 0.83,
+                                    "group": "accidents / illness",
                                     "urls": [
                                         "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/accidents_equalinterval/MapServer"
                                     ]
@@ -210,8 +215,28 @@
                                 {
                                     "name": "Illness (by geometric interval)",
                                     "opacity": 0.83,
+                                    "group": "accidents / illness",
                                     "urls": [
                                         "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/illness_geometricinterval/MapServer"
+                                    ]
+                                },
+
+                                {
+                                    "name": "Bus Routes",
+                                    "urls": [
+                                        "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/bus_routes/MapServer"
+                                    ]
+                                },
+                                {
+                                    "name": "Walking Paths",
+                                    "urls": [
+                                        "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/walking_paths/MapServer"
+                                    ]
+                                },
+                                {
+                                    "name": "City Tunnels",
+                                    "urls": [
+                                        "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/city_tunnels/MapServer"
                                     ]
                                 }
                             ]

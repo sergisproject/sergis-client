@@ -20,11 +20,15 @@ The web-based client for [the SerGIS Project](http://sergisproject.github.io/)
 
 ## TODO
 
-- make little thingie below map popup the first time we use it to tell the user that they can toggle layers
-- json for changing map projection (and/or ability for user to change it in toolbar)
-- ability for user to change basemap in toolbar (so, this and the projection would have defaults in the JSON and be changable by the user in the toolbar; this would be prompt-specific)
-- Make "Find Path" work
+- Fix issues with jumping around and maps (check how this all works out...)
 - Add option to "Restart Game" when score is shown
+- Make "Find Path" work (network analyst)
+- Add ability to buffer features in a feature layer
+- Option in JSON to reinit map every time we go out of order (i.e. what we do now).
+  Otherwise, only reinit the map when the user jumps.
+
+- Add ability to specify multiple basemaps in frontend info, which would allow the user to choose.
+- Add ability to specify multiple map projections in frontend info, which would allow the user to choose.
 
 
 ## License
