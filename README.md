@@ -26,6 +26,7 @@ The web-based client for [the SerGIS Project](http://sergisproject.github.io/)
 - Add ability to buffer features in a feature layer
 - Option in JSON to reinit map every time we go out of order (i.e. what we do now).
   Otherwise, only reinit the map when the user jumps.
+- If there's only one map layer in a group, then show it as a checkbox (as if it had no group).
 
 - Add ability to specify multiple basemaps in frontend info, which would allow the user to choose.
 - Add ability to specify multiple map projections in frontend info, which would allow the user to choose.
