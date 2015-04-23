@@ -410,6 +410,34 @@
         
         {
             "prompt": {
+                "title": "SerGIS",
+                "contents": [
+                    {"type": "html", "value": "<b>Notice the map layer!</b> The user cannot show/hide this one like the previous ones."}
+                ],
+                "map": {
+                    "latitude": 55.58,
+                    "longitude": 13,
+                    "zoom": 11,
+                    "frontendInfo": {
+                        "arcgis": {
+                            "basemap": "streets",
+                            "layers": [
+                                {
+                                    "name": "Malmo",
+                                    "toggleable": false,
+                                    "urls": [
+                                        "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/Malmo_test/MapServer"
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        
+        {
+            "prompt": {
                 "title": "Introduction",
                 "contents": [
                     {"type": "html", "value": "<b>Hello</b> <i>World!</i>"},
@@ -426,6 +454,7 @@
                             "layers": [
                                 {
                                     "name": "Malmo",
+                                    "toggleable": false,
                                     "urls": [
                                         "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/malmo/Malmo_test/MapServer"
                                     ]
