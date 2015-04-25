@@ -404,7 +404,7 @@
                 "title": "SerGIS",
                 "contents": [
                     {"type": "text", "value": "For now, those are the only questions related to Malmö. The rest of the questions show different features of the SerGIS platform."},
-                    {"type": "text", "value": "Also, notice how this map layer has a legend!"}
+                    {"type": "text", "value": "Also, notice how this map layer has a legend! (Check the layer to show it.)"}
                 ],
                 "map": {
                     "latitude": -47.397076,
@@ -415,7 +415,7 @@
                             "layers": [
                                 {
                                     "name": "Group Test",
-                                    "toggleable": false,
+                                    "toggleable": true,
                                     "hasLegend": true,
                                     "urls": [
                                         "http://geoapps64.main.ad.rit.edu:6080/arcgis/rest/services/UNSW_2015/Group24/MapServer"
