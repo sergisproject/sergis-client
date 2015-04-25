@@ -11,7 +11,7 @@ body {
     font-size: 16px;
 }
 
-.noselect {
+.noselect, .esriAttribution {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -389,9 +389,7 @@ div.popup-container {
     position: absolute;
     top: 0;
     right: 450px; /* modified in JS */
-    /* max-width: 50%; */
-    height: 100%;
-    padding: 5px 10px;
+    padding: 5px 10px 5px 0;
     box-sizing: border-box;
 }
 
