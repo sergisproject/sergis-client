@@ -24,8 +24,6 @@ The web-based client for [the SerGIS Project](http://sergisproject.github.io/)
 - Add option to "Restart Game" when score is shown
 - Make "Find Path" work (network analyst)
 - Add ability to buffer features in a feature layer
-- Option in JSON to reinit map every time we go out of order (i.e. what we do now).
-  Otherwise, only reinit the map when the user jumps.
 - Support conditionals and collectibles and shit
 
 - Add ability to specify multiple basemaps in frontend info, which would allow the user to choose.
