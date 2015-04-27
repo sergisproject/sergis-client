@@ -8,6 +8,7 @@
     "onJumpBack": "hide",
     "jumpingForwardAllowed": true,
     "showActionsInUserOrder": false,
+    "alwaysReinitializeMap": false,
     
     "promptList": [
         {
@@ -577,6 +578,7 @@
                     "latitude": 30,
                     "longitude": -20,
                     "zoom": 3,
+                    "reinitialize": "after",
                     "frontendInfo": {
                         "arcgis": {
                             "basemap": "national-geographic"
