@@ -182,9 +182,6 @@
                     {"type": "text", "value": "Which district should be given priority in an evacuation?"}
                 ],
                 "map": {
-                    "latitude": 55.58,
-                    "longitude": 13,
-                    "zoom": 11,
                     "frontendInfo": {
                         "arcgis": {
                             "basemap": "streets",
