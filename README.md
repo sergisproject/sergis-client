@@ -25,9 +25,10 @@ The web-based client for [the SerGIS Project](http://sergisproject.github.io/)
 - Make "Find Path" work (network analyst)
 - Add ability to buffer features in a feature layer
 - Support conditionals and collectibles and shit
+  - In the JSON spec, with conditionals, add some sort of way to retrieve a user's choice for a specific prompt (as a variable-like thing in a conditional)
 
-- Add ability to specify multiple basemaps in frontend info, which would allow the user to choose.
-- Add ability to specify multiple map projections in frontend info, which would allow the user to choose.
+- Add ability to specify multiple basemaps in frontend info, which would allow the user to choose. (See JSON spec)
+- Add ability to specify multiple map projections in frontend info, which would allow the user to choose. (Needs to be implemented in JSON spec)
 
 ## License
 
